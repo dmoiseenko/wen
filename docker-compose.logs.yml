@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  logspout:
+    image: gliderlabs/logspout
+    volumes:
+      - '/var/run/docker.sock:/tmp/docker.sock'
+    ports:
+      - "8000:80"

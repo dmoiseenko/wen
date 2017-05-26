@@ -1,0 +1,33 @@
+{
+  "env": {
+    "jest": true
+  },
+  "globals": {
+    "browser": true,
+    "window": true,
+    "document": true,
+    "fetch": true
+  },
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": ["react", "import"],
+  "rules":{
+    "react/jsx-no-bind": [2, {
+      "ignoreRefs": true,
+      "allowArrowFunctions": false,
+      "allowBind": false
+    }],
+    "comma-dangle": [0],
+    "arrow-body-style": [2, "as-needed"],
+    "class-methods-use-this": [0],
+    "jsx-a11y/no-static-element-interactions": [0],
+    "jsx-a11y/label-has-for": [0],
+    "jsx-a11y/anchor-has-content": [0],
+    "no-return-assign": ["error", "except-parens"],
+    "no-constant-condition": [2, {
+      "checkLoops": false
+    }],
+    "react/forbid-prop-types": [0],
+    "import/no-extraneous-dependencies": [0]
+  }
+}

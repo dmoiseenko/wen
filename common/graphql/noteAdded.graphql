@@ -1,0 +1,6 @@
+subscription {
+  noteAdded {
+    id
+    text
+  }
+}

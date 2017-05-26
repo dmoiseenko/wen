@@ -1,0 +1,38 @@
+version: '2'
+
+services:
+  selenium:
+    image: selenium/standalone-chrome-debug
+    ports:
+      - "5900:5900"
+    links:
+      - nginx
+
+  api:
+    env_file: .env.dev
+    command: npm run watch:api
+
+  static:
+    env_file: .env.dev
+    command: npm run watch:static
+
+  socket:
+    env_file: .env.dev
+    command: npm run watch:socket
+
+  nginx:
+    ports:
+      - "3000:3000"
+
+  runner:
+    env_file: .env.dev
+    links:
+      - selenium
+      - postgres
+      - api
+    command: /bin/true
+
+  postgres:
+    env_file: .env.dev
+    ports:
+      - "5432:5432"

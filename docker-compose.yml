@@ -1,0 +1,80 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:9.6.2-alpine
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:3.2.5-alpine
+    volumes:
+      - redis-data:/data
+    links:
+      - logspout
+
+  api:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/dev/Dockerfile
+    volumes:
+      - ./client:/usr/src/app/client/:ro
+      - ./common:/usr/src/app/common/:ro
+      - ./scripts:/usr/src/app/scripts/:ro
+      - ./server:/usr/src/app/server/:ro
+#      - ./test:/usr/src/app/test/:ro
+#      - ./chimp.js:/usr/src/app/chimp.js:ro
+      - ./package.json:/usr/src/app/package.json:ro
+      - ./.babelrc:/usr/src/app/.babelrc:ro
+    links:
+      - redis
+      - postgres
+      - logspout
+
+  socket:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/dev/Dockerfile
+    volumes_from:
+      - api
+    links:
+      - redis
+      - postgres
+      - logspout
+
+  static:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/dev/Dockerfile
+    volumes_from:
+      - api
+    links:
+      - postgres
+      - logspout
+
+  runner:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/dev/Dockerfile
+    volumes_from:
+      - api
+    depends_on:
+      - nginx
+    links:
+      - postgres
+    command: /bin/true
+
+  nginx:
+    build:
+      context: ./dockerfiles/ngnix/
+    volumes_from:
+      - api
+    links:
+      - api
+      - static
+      - socket
+
+volumes:
+  postgres-data:
+    driver: local
+  redis-data:
+    driver: local

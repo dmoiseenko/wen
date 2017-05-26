@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  api:
+    env_file: .env.prod
+    command: npm run api
+
+  static:
+    env_file: .env.prod
+    command: npm run static
+
+  socket:
+    env_file: .env.prod
+    command: npm run socket
+
+  runner:
+    env_file: .env.prod
+    command: npm run bootstrap
+
+  nginx:
+    ports:
+      - "3000:3000"
+
+  postgres:
+    env_file: .env.prod

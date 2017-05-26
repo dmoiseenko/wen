@@ -1,0 +1,13 @@
+[*.js]
+indent_style = space
+indent_size = 2
+curly_bracket_next_line = false
+
+[*.jsx]
+indent_style = space
+indent_size = 2
+curly_bracket_next_line = false
+
+[*.scss]
+indent_style = space
+indent_size = 2

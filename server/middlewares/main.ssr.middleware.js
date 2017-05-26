@@ -1,0 +1,57 @@
+/* eslint-disable global-require*/
+
+const { createLocalInterface } = require('apollo-local-query');
+const graphql = require('graphql');
+const { ApolloClient, renderToStringWithData } = require('react-apollo');
+const { renderToStaticMarkup } = require('react-dom/server');
+const schema = require('../graphql/schema');
+
+const isProduction = process.env.NODE_ENV === 'production';
+
+let appComponent;
+let htmlComponent;
+if (isProduction) {
+  appComponent = require('../../build/main/server').default;
+  htmlComponent = require('../../build/main/html').default;
+}
+
+module.exports = () => async (ctx) => {
+  if (!isProduction) {
+    delete require.cache[require.resolve('../../build/main/server')];
+    delete require.cache[require.resolve('../../build/main/html')];
+    appComponent = require('../../build/main/server').default;
+    htmlComponent = require('../../build/main/html').default;
+  }
+
+  const context = {};
+
+  const client = new ApolloClient({
+    ssrMode: true,
+    networkInterface: createLocalInterface(
+      graphql,
+      schema,
+      { context: { user: ctx.state.user } }
+    )
+  });
+
+  const app = appComponent({ apolloClient: client, location: ctx.url, context });
+
+  const renderedAppWithData = await renderToStringWithData(app);
+
+  const initialState = { apollo: client.getInitialState() };
+
+  let assets;
+  if (isProduction) {
+    assets = require('../../public/main/assets.json');
+  }
+
+  const html = renderToStaticMarkup(htmlComponent({
+    root: renderedAppWithData,
+    state: initialState,
+    assets
+  }));
+
+  ctx.response.body = `<!DOCTYPE html>${html}`;
+};
+
+/* eslint-enable global-require*/

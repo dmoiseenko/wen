@@ -1,0 +1,29 @@
+type User {
+  id: Int!
+  firstName: String
+  lastName: String
+}
+
+type Note {
+  id: Int!
+  text: String
+}
+
+type Query {
+  me: User
+  notes: [Note]
+}
+
+type Subscription {
+  noteAdded: Note
+}
+
+type Mutation {
+  addNote(text: String): Note
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}

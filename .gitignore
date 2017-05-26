@@ -1,0 +1,18 @@
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# Typescript v1 declaration files
+typings/
+
+# dotenv environment variables file
+.env
+
+# Webstorm
+.idea/
+
+# Build
+public
+build

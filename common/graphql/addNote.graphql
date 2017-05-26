@@ -1,0 +1,6 @@
+mutation addNote($text: String!) {
+  addNote(text: $text) {
+    id
+    text
+  }
+}
