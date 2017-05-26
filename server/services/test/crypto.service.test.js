@@ -1,5 +1,3 @@
-const expect = require('expect');
-
 const cryptoService = require('../crypto.service.js');
 
 

@@ -1,7 +1,9 @@
 const baseResolver = require('../common/base.resolver');
-const noteService = require('../../../services/note.service');
+const notesProcessResolver = require('./notes.process.resolver');
+const composeCreateResolver = require('../common/composeCreateResolver');
 
 
-module.exports = baseResolver.createResolver(
-  () => noteService.getNotes()
-);
+module.exports = composeCreateResolver([
+  baseResolver,
+  notesProcessResolver,
+]);

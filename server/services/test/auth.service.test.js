@@ -8,11 +8,11 @@ const authService = require('../auth.service');
 
 
 describe('auth.service', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
   describe('login', () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+
     const user = {
       passwordHash: '123'
     };

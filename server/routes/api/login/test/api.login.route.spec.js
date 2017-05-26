@@ -1,10 +1,10 @@
 const request = require('supertest')('http://localhost:3000');
 
-const bootstrap = require('../../db/preparations/bootstrap');
+const bootstrap = require('../../../../db/preparations/bootstrap');
 
 
 describe('POST /api/login', () => {
-  before(async () => {
+  beforeAll(async () => {
     await bootstrap();
   });
 
