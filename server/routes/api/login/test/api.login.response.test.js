@@ -9,7 +9,6 @@ describe('api/login', () => {
     let ctx;
 
     beforeEach(() => {
-      jest.clearAllMocks();
       ctx = {
         response: {
           status: 'status',

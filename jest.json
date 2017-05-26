@@ -1,0 +1,10 @@
+{
+  "testMatch": [
+    "**/test/**/*.test.js?(x)"
+  ],
+  "setupFiles": [
+    "./server/test/init.js"
+  ],
+  "clearMocks": true,
+  "testEnvironment": "node"
+}

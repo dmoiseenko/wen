@@ -13,10 +13,6 @@ const loginRoute = require('../api.login.route');
 
 describe('/api/login', () => {
   describe('route', () => {
-    beforeEach(() => {
-      jest.clearAllMocks();
-    });
-
     const router = {
       post: jest.fn()
     };

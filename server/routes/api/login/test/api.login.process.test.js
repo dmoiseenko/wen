@@ -10,7 +10,6 @@ describe('api/login', () => {
     let next;
 
     beforeEach(() => {
-      jest.clearAllMocks();
       next = jest.fn();
       ctx = {
         request: {

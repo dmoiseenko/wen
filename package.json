@@ -104,7 +104,7 @@
     "socket": "node server/socket.server.js",
     "test": "npm run test:server && npm run test:common && npm run test:client",
     "test:client": "mocha --require ./client/test/init.babel.js \"./client/**/*.test.js*\"",
-    "test:common": "mocha \"./common/**/*.test.js*\"",
+    "test:common": "jest --config jest.json",
     "test:integration": "mocha --require ./server/test/init.js \"./server/**/*.spec.js*\"",
     "test:server": "mocha --require ./server/test/init.js \"./server/**/*.test.js*\"",
     "watch:api": "nodemon --ignore client/ --ignore build/ --ignore server/static.server.js -e js,json,graphqls server/api.server.js",

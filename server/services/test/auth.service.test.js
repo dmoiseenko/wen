@@ -9,10 +9,6 @@ const authService = require('../auth.service');
 
 describe('auth.service', () => {
   describe('login', () => {
-    beforeEach(() => {
-      jest.clearAllMocks();
-    });
-
     const user = {
       passwordHash: '123'
     };
@@ -23,7 +19,7 @@ describe('auth.service', () => {
     userRepository.getUserByEmail.mockReturnValue(Promise.resolve(user));
     jwtService.generateToken.mockReturnValue(token);
 
-    test('should get user by email', async () => {
+    it('should get user by email', async () => {
       await authService.login({ email, password });
 
       expect(userRepository.getUserByEmail).toHaveBeenCalledWith(email);

@@ -10,10 +10,9 @@ describe('api/login', () => {
       });
 
       try {
-        await
-        maskInternalErrors({}, next);
+        await maskInternalErrors({}, next);
       } catch (err) {
-        expect(err.constructor).toEqual(LoginError);
+        expect(err).toBeInstanceOf(Error); // TODO
       }
     });
   });

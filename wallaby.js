@@ -36,7 +36,6 @@ module.exports = function (wallaby) {
     testFramework: 'jest',
     setup: function () {
       require('./server/test/init.js');
-      //require('./client/test/init.js'); // TODO
     },
     slowTestThreshold: 200,
     lowCoverageThreshold: 70
