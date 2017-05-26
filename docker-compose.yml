@@ -24,6 +24,7 @@ services:
 #      - ./test:/usr/src/app/test/:ro
 #      - ./chimp.js:/usr/src/app/chimp.js:ro
       - ./package.json:/usr/src/app/package.json:ro
+      - ./jest.json:/usr/src/app/jest.json:ro
       - ./.babelrc:/usr/src/app/.babelrc:ro
     links:
       - redis
