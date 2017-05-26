@@ -3,7 +3,7 @@ const validatePassword = require('../password.validation');
 
 describe('password.validation', () => {
   it('should throw error if password is empty string', () => {
-    expect(() => validatePassword('1')).toThrow('Invalid password');
+    expect(() => validatePassword('')).toThrow('Invalid password');
   });
 
   it('should throw error if email is null', () => {
