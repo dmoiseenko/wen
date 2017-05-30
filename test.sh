@@ -10,4 +10,4 @@ DOCKER_COMPOSE="docker-compose
 
 ${DOCKER_COMPOSE} build
 ${DOCKER_COMPOSE} run --service-ports runner yarn run test:common
-${DOCKER_COMPOSE} down
+${DOCKER_COMPOSE} down -v
