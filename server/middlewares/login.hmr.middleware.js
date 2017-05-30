@@ -5,6 +5,9 @@ const loginWebpackConfig = require('../../client/login/webpack/login.dev.webpack
 module.exports = () => webpackMiddleware({
   config: loginWebpackConfig,
   dev: {
-    publicPath: '/login'
+    publicPath: '/login',
+    watcherOptions: {
+      poll: true
+    }
   }
 });

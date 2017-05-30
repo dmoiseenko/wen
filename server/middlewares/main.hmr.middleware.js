@@ -6,6 +6,9 @@ const mainDevWebpackConfig = require('../../client/main/webpack/main.dev.webpack
 module.exports = () => webpackMiddleware({
   config: mainDevWebpackConfig,
   dev: {
-    publicPath: '/'
+    publicPath: '/',
+    watcherOptions: {
+      poll: true
+    }
   }
 });

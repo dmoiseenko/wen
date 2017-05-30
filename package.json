@@ -107,11 +107,11 @@
     "test:common": "jest --config jest.json",
     "test:integration": "mocha --require ./server/test/init.js \"./server/**/*.spec.js*\"",
     "test:server": "mocha --require ./server/test/init.js \"./server/**/*.test.js*\"",
-    "watch:api": "nodemon --ignore client/ --ignore build/ --ignore server/static.server.js -e js,json,graphqls server/api.server.js",
-    "watch:socket": "nodemon --ignore client/ --ignore build/ --ignore server/static.server.js -e js,json,graphqls server/socket.server.js",
+    "watch:api": "nodemon -L --ignore client/ --ignore build/ --ignore server/static.server.js -e js,json,graphqls server/api.server.js",
+    "watch:socket": "nodemon -L --ignore client/ --ignore build/ --ignore server/static.server.js -e js,json,graphqls server/socket.server.js",
     "watch:static": "npm run prebuild && concurrently \"npm run watch:static:login\" \"npm run watch:static:main\" \"npm run watch:static:server\"",
-    "watch:static:login": "webpack -w --config ./client/login/webpack/login.prebuild.webpack.config.js",
-    "watch:static:main": "webpack -w --config ./client/main/webpack/main.prebuild.webpack.config.js",
-    "watch:static:server": "nodemon --ignore client/ --ignore build/ server/static.server.js"
+    "watch:static:login": "webpack -w --watch-poll --config ./client/login/webpack/login.prebuild.webpack.config.js",
+    "watch:static:main": "webpack -w -watch-poll --config ./client/main/webpack/main.prebuild.webpack.config.js",
+    "watch:static:server": "nodemon -L --ignore client/ --ignore build/ server/static.server.js"
   }
 }
