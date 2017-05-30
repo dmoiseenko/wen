@@ -8,9 +8,6 @@ export default function NewNote({ addNote, noteText }) {
     addNote(noteText);
   }
 
-  console.log('render');
-  console.log(noteText);
-
   return (
     <p className="control">
       <button
