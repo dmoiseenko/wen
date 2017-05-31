@@ -1,7 +1,7 @@
 import { SubscriptionClient } from 'subscriptions-transport-ws';
 
 
-const subscriptionClient = new SubscriptionClient(`ws://${API_URL}/subscriptions/`, {
+const subscriptionClient = new SubscriptionClient(`wss://${API_URL}/subscriptions/`, {
   reconnect: true
 });
 
