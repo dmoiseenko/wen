@@ -4,6 +4,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
 
+const config = require('../../../common/config.js');
+
 
 const publicFolderPath = path.join(__dirname, '../../../public/main');
 
@@ -77,7 +79,8 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      API_URL: JSON.stringify(config.server.url)
     }),
     new ExtractTextPlugin({
       filename: 'css/styles-[contenthash].css',
