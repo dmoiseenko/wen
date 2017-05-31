@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-#!/usr/bin/env bash
-
 DOCKER_COMPOSE="docker-compose
 --project-name wenTest
 -f docker-compose.yml
@@ -16,10 +14,12 @@ ${DOCKER_COMPOSE} down -v
 cleanup_command_status=$?
 
 if [[ "$docker_command_status" -ne 0 ]] ; then
+  echo "Test fails"
 	exit $docker_command_status
 fi
 
 if [[ "$cleanup_command_status" -ne 0 ]] ; then
+  echo "Clean up fails"
 	exit $cleanup_command_status
 fi
 
