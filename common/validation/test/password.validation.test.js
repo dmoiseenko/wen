@@ -7,7 +7,7 @@ describe('password.validation', () => {
   });
 
   it('should throw error if email is null', () => {
-    expect(() => validatePassword(null)).toThrow('Invalid password1');
+    expect(() => validatePassword(null)).toThrow('Invalid password');
   });
 
   it('should throw error if email is undefined', () => {
