@@ -6,10 +6,14 @@ stages:
 test:
   stage: test
   script: echo "Running tests"
+  tags:
+    - wen
 
 build:
   stage: build
   script: echo "Building the app"
+  tags:
+    - wen
 
 deploy_review:
   stage: deploy
@@ -22,6 +26,8 @@ deploy_review:
     - branches
   except:
     - master
+  tags:
+    - wen
 
 deploy_staging:
   stage: deploy
@@ -31,7 +37,9 @@ deploy_staging:
     name: staging
     url: https://staging.example.com
   only:
-  - master
+    - master
+  tags:
+    - wen
 
 deploy_prod:
   stage: deploy
@@ -42,4 +50,6 @@ deploy_prod:
     url: https://example.com
   when: manual
   only:
-  - master
+    - master
+  tags:
+    - wen
