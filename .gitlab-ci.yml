@@ -20,3 +20,4 @@ deploy_staging:
     - master
   tags:
     - wen
+    - stage
