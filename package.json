@@ -102,7 +102,7 @@
     "prebuild:main": "webpack -p --config ./client/main/webpack/main.prebuild.webpack.config.js",
     "static": "npm run build && node server/static.server.js",
     "socket": "node server/socket.server.js",
-    "test": "jest --coverage --config jest.json",
+    "test": "jest --config jest.json",
     "test:integration": "jest --coverage --config jest.spec.json",
     "watch:api": "nodemon -L --ignore client/ --ignore build/ --ignore server/static.server.js -e js,json,graphqls server/api.server.js",
     "watch:socket": "nodemon -L --ignore client/ --ignore build/ --ignore server/static.server.js -e js,json,graphqls server/socket.server.js",

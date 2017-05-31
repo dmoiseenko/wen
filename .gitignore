@@ -16,3 +16,4 @@ typings/
 # Build
 public
 build
+coverage
