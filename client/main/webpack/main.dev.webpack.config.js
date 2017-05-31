@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 
+const config = require('../../../common/config.js');
+
 
 module.exports = {
   entry: {
@@ -94,7 +96,8 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
+      'process.env.NODE_ENV': JSON.stringify('development'),
+      API_URL: JSON.stringify(config.server.url)
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
