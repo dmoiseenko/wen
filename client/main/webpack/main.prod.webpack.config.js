@@ -79,8 +79,8 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-      API_URL: JSON.stringify(config.server.url)
+      'process.env.NODE_ENV': JSON.stringify(config.NODE_ENV),
+      SOCKET_URL: JSON.stringify(config.socket.url)
     }),
     new ExtractTextPlugin({
       filename: 'css/styles-[contenthash].css',

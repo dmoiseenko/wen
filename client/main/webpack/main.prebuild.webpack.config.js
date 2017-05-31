@@ -3,6 +3,11 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
+const config = require('../../../common/config.js');
+
+console.log('2222222222222222222222222222222222');
+console.log(config.NODE_ENV);
+
 
 module.exports = {
   entry: {
@@ -94,7 +99,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+      'process.env.NODE_ENV': JSON.stringify(config.NODE_ENV)
     }),
     new ExtractTextPlugin({
       filename: 'css/styles.css',
