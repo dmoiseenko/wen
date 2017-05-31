@@ -18,4 +18,3 @@ module.exports.decrypt = (value) => {
 
   return decrypted;
 };
-

@@ -15,9 +15,8 @@ module.exports = function (wallaby) {
       '!server/**/*.test.js*',
       '!server/**/*.spec.js*',
       '!server/**/test/*.jest.js',
-      { pattern: '\.env.dev', instrument: false, load: true, ignore: false },
-      { pattern: '\.env.test', instrument: false, load: true, ignore: false },
-      { pattern: 'package\.json', instrument: false, load: true, ignore: false }
+      '.env.test',
+      'jest.json'
     ],
     tests: [
       'client/**/test/*.test.js*',
@@ -35,7 +34,8 @@ module.exports = function (wallaby) {
     },
     testFramework: 'jest',
     setup: function () {
-      require('./server/test/init.js');
+      const jestConfig = require('./jest.json');
+      wallaby.testFramework.configure(jestConfig);
     },
     slowTestThreshold: 200,
     lowCoverageThreshold: 70

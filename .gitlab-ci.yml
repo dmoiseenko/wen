@@ -1,5 +1,55 @@
-job1:
+stages:
+  - test
+  - build
+  - deploy
+
+test:
+  stage: test
+  script: echo "Running tests"
+  tags:
+    - wen
+
+build:
+  stage: build
+  script: echo "Building the app"
+  tags:
+    - wen
+
+deploy_review:
+  stage: deploy
   script:
-    - bash test.sh
+    - echo "Deploy a review app"
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://$CI_ENVIRONMENT_SLUG.example.com
+  only:
+    - branches
+  except:
+    - master
+  tags:
+    - wen
+
+deploy_staging:
+  stage: deploy
+  script:
+    - echo "Deploy to staging server"
+  environment:
+    name: staging
+    url: https://staging.example.com
+  only:
+    - master
+  tags:
+    - wen
+
+deploy_prod:
+  stage: deploy
+  script:
+    - echo "Deploy to production server"
+  environment:
+    name: production
+    url: https://example.com
+  when: manual
+  only:
+    - master
   tags:
     - wen

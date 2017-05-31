@@ -1,10 +1,10 @@
 const baseResolver = require('../common/base.resolver');
 const addNoteValidateResolver = require('./addNote.validate.resolver');
 const addNoteProcessResolver = require('./addNote.process.resolver');
-const composeCreateResolver = require('../common/composeCreateResolver');
+const composeResolvers = require('../common/composeResolvers');
 
 
-module.exports = composeCreateResolver([
+module.exports = composeResolvers([
   baseResolver,
   addNoteValidateResolver,
   addNoteProcessResolver
