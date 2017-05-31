@@ -16,6 +16,8 @@ module.exports.getUserByEmail = async (email) => {
     throw new errors.UserNotFoundError();
   }
 
+  console.log(userInstance);
+
   return userInstance.get({ plain: true });
 };
 

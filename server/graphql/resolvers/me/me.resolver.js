@@ -1,9 +1,9 @@
 const baseResolver = require('../common/base.resolver');
 const notesProcessResolver = require('./me.process.resolver');
-const composeCreateResolver = require('../common/composeCreateResolver');
+const composeResolvers = require('../common/composeResolvers');
 
 
-module.exports = composeCreateResolver([
+module.exports = composeResolvers([
   baseResolver,
   notesProcessResolver,
 ]);
