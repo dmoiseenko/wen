@@ -1,10 +1,10 @@
-version: '2'
+version: '3'
 
 services:
   selenium:
     image: selenium/standalone-chrome-debug
     ports:
-      - "5900:5900"
+      - '5900:5900'
     links:
       - nginx
 
@@ -22,7 +22,7 @@ services:
 
   nginx:
     ports:
-      - "3000:3000"
+      - '3000:3000'
 
   runner:
     env_file: .env.dev
@@ -35,4 +35,4 @@ services:
   postgres:
     env_file: .env.dev
     ports:
-      - "5432:5432"
+      - '5432:5432'
