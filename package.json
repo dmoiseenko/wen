@@ -112,7 +112,7 @@
     "lint-js": "eslint . --ext .js,.jsx --fix",
     "static": "node server/static.server.js",
     "socket": "node server/socket.server.js",
-    "test": "jest --config jest.json",
+    "test": "npm run bootstrap && jest --config jest.json",
     "test:watch": "jest --watch --config jest.json",
     "watch:api": "nodemon -L --ignore client/ --ignore build/ --ignore server/static.server.js -e js,json,graphqls server/api.server.js",
     "watch:socket": "nodemon -L --ignore client/ --ignore build/ --ignore server/static.server.js -e js,json,graphqls server/socket.server.js",

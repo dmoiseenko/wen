@@ -3,7 +3,7 @@
 DOCKER_COMPOSE="docker-compose
 --project-name wenTest
 -f docker-compose.yml
--f docker-compose.dev.yml
+-f docker-compose.prod.yml
 -f docker-compose.logs.yml"
 
 ${DOCKER_COMPOSE} build
