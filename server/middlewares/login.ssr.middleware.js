@@ -1,4 +1,4 @@
-/* eslint-disable global-require*/
+/* eslint-disable import/no-unresolved, global-require */
 
 const { renderToStaticMarkup, renderToString } = require('react-dom/server');
 
@@ -30,4 +30,4 @@ module.exports = () => async (ctx) => {
   ctx.response.body = `<!DOCTYPE html>${html}`;
 };
 
-/* eslint-enable global-require*/
+/* eslint-enable import/no-unresolved, global-require */

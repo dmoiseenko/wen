@@ -1,5 +1,4 @@
 const maskInternalErrors = require('../api.login.maskInternalErrors');
-const { LoginError } = require('../../../../utils/errors');
 
 
 describe('api/login', () => {

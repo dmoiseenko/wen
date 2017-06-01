@@ -5,9 +5,6 @@ const nodeExternals = require('webpack-node-externals');
 
 const config = require('../../../common/config.js');
 
-console.log('2222222222222222222222222222222222');
-console.log(config.NODE_ENV);
-
 
 module.exports = {
   entry: {

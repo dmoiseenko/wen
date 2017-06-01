@@ -1,4 +1,4 @@
-/* eslint-disable global-require*/
+/* eslint-disable import/no-unresolved, global-require */
 
 const { createLocalInterface } = require('apollo-local-query');
 const graphql = require('graphql');
@@ -54,4 +54,4 @@ module.exports = () => async (ctx) => {
   ctx.response.body = `<!DOCTYPE html>${html}`;
 };
 
-/* eslint-enable global-require*/
+/* eslint-enable import/no-unresolved, global-require */

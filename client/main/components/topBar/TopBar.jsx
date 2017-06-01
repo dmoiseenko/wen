@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import UserContainer from '../topBar/User.container';
 
 
 function TopBar() {

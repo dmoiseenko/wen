@@ -3,7 +3,7 @@ import { reduxForm } from 'redux-form';
 import { compose } from 'recompose';
 
 import NoteForm from './NoteForm';
-import { noteForm, textField } from '../../core/note.form.constant';
+import { noteForm } from '../../core/note.form.constant';
 
 
 const form = {

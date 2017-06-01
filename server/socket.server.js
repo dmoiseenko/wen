@@ -10,9 +10,9 @@ const app = new App();
 
 const server = app.listen(WS_PORT);
 
-const subscriptionServer = new SubscriptionServer(
+module.exports.subscriptionServer = new SubscriptionServer(
   {
-    //TODO
+    // TODO
     // onConnect: async (connectionParams, websocket) => {
     //   console.log(websocket.upgradeReq.headers.cookie);
     // },

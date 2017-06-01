@@ -15,8 +15,8 @@ export function mapStateToProps(state) {
 
 export const props = ({ mutate, ownProps }) => ({
   ...ownProps,
-  addNote: noteText => {
-    mutate({ variables: { text: noteText } }).catch(err => console.log(err));
+  addNote: (noteText) => {
+    mutate({ variables: { text: noteText } });
   }
 });
 
