@@ -9,14 +9,37 @@ services:
       - nginx
 
   api:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/dev/Dockerfile
+    volumes:
+      - ./client:/usr/src/app/client/:ro
+      - ./common:/usr/src/app/common/:ro
+      - ./scripts:/usr/src/app/scripts/:ro
+      - ./server:/usr/src/app/server/:ro
+#      - ./test:/usr/src/app/test/:ro
+#      - ./chimp.js:/usr/src/app/chimp.js:ro
+      - ./package.json:/usr/src/app/package.json:ro
+      - ./jest.json:/usr/src/app/jest.json:ro
+      - ./.babelrc:/usr/src/app/.babelrc:ro
     env_file: .env.dev
     command: npm run watch:api
 
   static:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/dev/Dockerfile
+    volumes_from:
+      - api
     env_file: .env.dev
     command: npm run watch:static
 
   socket:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/dev/Dockerfile
+    volumes_from:
+      - api
     env_file: .env.dev
     command: npm run watch:socket
 
@@ -25,11 +48,14 @@ services:
       - '3000:3000'
 
   runner:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/dev/Dockerfile
+    volumes_from:
+      - api
     env_file: .env.dev
     links:
       - selenium
-      - postgres
-      - api
     command: /bin/true
 
   postgres:

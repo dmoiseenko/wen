@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "author": "dmoiseenko@mykolab.com",
   "dependencies": {
-    "@types/jest": "^19.2.3",
-    "@types/react": "15.0.25",
     "apollo-errors": "1.4.0",
     "apollo-local-query": "0.3.0",
     "apollo-resolvers": "1.0.2",
@@ -49,6 +47,8 @@
     "validator": "7.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^19.2.3",
+    "@types/react": "15.0.25",
     "assets-webpack-plugin": "3.5.1",
     "babel-core": "6.24.1",
     "babel-eslint": "7.2.3",
@@ -92,15 +92,15 @@
   "scripts": {
     "api": "node server/api.server.js",
     "bootstrap": "node scripts/bootstrap.js",
+    "prebuild": "npm run prebuild:login && npm run prebuild:main",
+    "prebuild:login": "webpack -p --config ./client/login/webpack/login.prebuild.webpack.config.js",
+    "prebuild:main": "webpack -p --config ./client/main/webpack/main.prebuild.webpack.config.js",
     "build": "npm run build:login && npm run build:main",
     "build:login": "webpack -p --config ./client/login/webpack/login.prod.webpack.config.js",
     "build:main": "webpack -p --config ./client/main/webpack/main.prod.webpack.config.js",
     "generateSchema": "node scripts/generateSchema.js",
     "lint-js": "eslint . --ext .js,.jsx --fix",
-    "prebuild": "npm run prebuild:login && npm run prebuild:main",
-    "prebuild:login": "webpack -p --config ./client/login/webpack/login.prebuild.webpack.config.js",
-    "prebuild:main": "webpack -p --config ./client/main/webpack/main.prebuild.webpack.config.js",
-    "static": "npm run build && node server/static.server.js",
+    "static": "node server/static.server.js",
     "socket": "node server/socket.server.js",
     "test": "jest --config jest.json",
     "test:integration": "jest --coverage --config jest.spec.json",
@@ -108,7 +108,7 @@
     "watch:socket": "nodemon -L --ignore client/ --ignore build/ --ignore server/static.server.js -e js,json,graphqls server/socket.server.js",
     "watch:static": "npm run prebuild && concurrently \"npm run watch:static:login\" \"npm run watch:static:main\" \"npm run watch:static:server\"",
     "watch:static:login": "webpack -w --watch-poll --config ./client/login/webpack/login.prebuild.webpack.config.js",
-    "watch:static:main": "webpack -w -watch-poll --config ./client/main/webpack/main.prebuild.webpack.config.js",
+    "watch:static:main": "webpack -w --watch-poll --config ./client/main/webpack/main.prebuild.webpack.config.js",
     "watch:static:server": "nodemon -L --ignore client/ --ignore build/ server/static.server.js"
   }
 }

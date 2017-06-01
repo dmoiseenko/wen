@@ -14,55 +14,29 @@ services:
       - logspout
 
   api:
-    build:
-      context: .
-      dockerfile: ./dockerfiles/dev/Dockerfile
-    volumes:
-      - ./client:/usr/src/app/client/:ro
-      - ./common:/usr/src/app/common/:ro
-      - ./scripts:/usr/src/app/scripts/:ro
-      - ./server:/usr/src/app/server/:ro
-#      - ./test:/usr/src/app/test/:ro
-#      - ./chimp.js:/usr/src/app/chimp.js:ro
-      - ./package.json:/usr/src/app/package.json:ro
-      - ./jest.json:/usr/src/app/jest.json:ro
-      - ./.babelrc:/usr/src/app/.babelrc:ro
     links:
       - redis
       - postgres
       - logspout
 
   socket:
-    build:
-      context: .
-      dockerfile: ./dockerfiles/dev/Dockerfile
-    volumes_from:
-      - api
     links:
       - redis
       - postgres
       - logspout
 
   static:
-    build:
-      context: .
-      dockerfile: ./dockerfiles/dev/Dockerfile
-    volumes_from:
-      - api
     links:
       - postgres
       - logspout
 
   runner:
-    build:
-      context: .
-      dockerfile: ./dockerfiles/dev/Dockerfile
-    volumes_from:
-      - api
+
     depends_on:
       - nginx
     links:
       - postgres
+      - api
     command: /bin/true
 
   nginx:

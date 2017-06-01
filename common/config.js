@@ -5,7 +5,9 @@ module.exports = {
   server: {
     host: env.HOST,
     port: env.PORT,
-    url: env.URL
+  },
+  socket: {
+    url: env.SOCKET_URL,
   },
   secret: {
     crypto: env.CRYPTO_SECRET,
@@ -28,5 +30,6 @@ module.exports = {
   redis: {
     host: env.REDIS_HOST,
     port: env.REDIS_PORT
-  }
+  },
+  NODE_ENV: env.NODE_ENV
 };
