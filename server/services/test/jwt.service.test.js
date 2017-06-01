@@ -16,7 +16,7 @@ describe('crypto.service', () => {
       try {
         await jwtService.verifyToken('token');
       } catch (err) {
-        expect(err).toBeInstanceOf(Error); // TODO
+        expect(err.name).toEqual('InvalidTokenError');
       }
     });
   });

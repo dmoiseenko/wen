@@ -1,6 +1,7 @@
 {
   "testMatch": [
-    "**/test/*.test.js?(x)"
+    "**/test/*.test.js?(x)",
+    "**/test/*.spec.js?(x)"
   ],
   "setupFiles": [
     "./server/test/init.js"

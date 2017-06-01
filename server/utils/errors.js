@@ -3,7 +3,7 @@ module.exports.LoginValidationError =
     constructor(message) {
       super(message);
 
-      this.name = this.constructor.name;
+      this.name = 'LoginValidationError';
     }
   };
 
@@ -12,7 +12,7 @@ module.exports.LoginError =
     constructor(message) {
       super(message);
 
-      this.name = this.constructor.name;
+      this.name = 'LoginError';
     }
   };
 
@@ -21,7 +21,7 @@ module.exports.InvalidPasswordHashError =
     constructor(message) {
       super(message);
 
-      this.name = this.constructor.name;
+      this.name = 'InvalidPasswordHashError';
     }
   };
 
@@ -30,7 +30,7 @@ module.exports.UserNotFoundError =
     constructor(message) {
       super(message);
 
-      this.name = this.constructor.name;
+      this.name = 'UserNotFoundError';
     }
   };
 
@@ -39,6 +39,6 @@ module.exports.InvalidTokenError =
     constructor(message) {
       super(message);
 
-      this.name = this.constructor.name;
+      this.name = 'InvalidTokenError';
     }
   };

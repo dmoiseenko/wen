@@ -11,7 +11,7 @@ describe('api/login', () => {
       try {
         await maskInternalErrors({}, next);
       } catch (err) {
-        expect(err).toBeInstanceOf(Error); // TODO
+        expect(err.name).toEqual('LoginError');
       }
     });
   });

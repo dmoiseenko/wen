@@ -1,7 +1,10 @@
-const request = require('supertest')('http://localhost:3000');
+const supertest = require('supertest');
 
 const bootstrap = require('../../../../db/preparations/bootstrap');
+const config = require('../../../../../common/config.js');
 
+
+const request = supertest(`http://${config.server.host}:${config.server.port}`);
 
 describe('POST /api/login', () => {
   beforeAll(async () => {
@@ -12,12 +15,11 @@ describe('POST /api/login', () => {
     await bootstrap();
   });
 
-  it('should set cookie token', async () => {
+  it('should response with 200 and empty body if credentials are valid', async () => {
     await request
       .post('/api/login')
       .send({ email: 'js@mail.com', password: 'password' })
-      .expect('set-cookie', 'wen=eyJhbGciOiJIUzI1NiJ9.YjM5NGI1YTE5ZDIzYTVlNTY0MGI1YTZhZDJiZDhjMWY.CQ1tB-8IFWXE2fj9qdOApJMfchq1Me_8p19dCAxe8yo; path=/; httponly')
-      .expect(200);
+      .expect(200, {});
   });
 
   it('should response with 500 if credentials are invalid', async () => {

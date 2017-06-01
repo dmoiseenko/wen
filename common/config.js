@@ -7,7 +7,8 @@ module.exports = {
     port: env.PORT,
   },
   socket: {
-    url: env.SOCKET_URL,
+    host: env.SOCKET_HOST,
+    port: env.SOCKET_PORT
   },
   secret: {
     crypto: env.CRYPTO_SECRET,

@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 module.exports = function (wallaby) {
-  process.env.NODE_ENV = 'test';
+  process.env.NODE_ENV = 'development';
 
   return {
     files: [
@@ -15,14 +15,13 @@ module.exports = function (wallaby) {
       '!server/**/*.test.js*',
       '!server/**/*.spec.js*',
       '!server/**/test/*.jest.js',
-      '.env.test',
+      '.env.dev',
       'jest.json'
     ],
     tests: [
       'client/**/test/*.test.js*',
       'common/**/test/*.test.js',
       'server/**/test/*.test.js',
-      //'server/**/test/*.spec.js', //TODO
       'server/**/test/*.jest.js'
     ],
     compilers: {
