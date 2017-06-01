@@ -16,7 +16,5 @@ deploy_staging:
     name: staging
     url: https://wen.moiden.com
   when: manual
-  only:
-    - master
   tags:
     - stage

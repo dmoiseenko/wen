@@ -17,6 +17,10 @@ COPY server server
 COPY jest.json .
 COPY .babelrc .
 COPY .env.prod .
+COPY e2e e2e
+COPY chimp.js .
+COPY .eslintrc .
+COPY .eslintignore .
 
 ENV NODE_ENV production
 
