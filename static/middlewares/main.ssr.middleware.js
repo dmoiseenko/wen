@@ -4,7 +4,7 @@ const { createLocalInterface } = require('apollo-local-query');
 const graphql = require('graphql');
 const { ApolloClient, renderToStringWithData } = require('react-apollo');
 const { renderToStaticMarkup } = require('react-dom/server');
-const schema = require('../graphql/schema');
+const schema = require('../../server/graphql/schema');
 
 const isProduction = process.env.NODE_ENV === 'production';
 

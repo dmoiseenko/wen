@@ -1,4 +1,4 @@
-jest.mock('../../../../utils/cookie.js');
+jest.mock('../../../..//utils/cookie.js');
 const cookie = require('../../../../utils/cookie.js');
 
 const response = require('../api.login.response');

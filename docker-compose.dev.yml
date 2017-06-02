@@ -17,10 +17,12 @@ services:
       - ./common:/usr/src/app/common/:ro
       - ./scripts:/usr/src/app/scripts/:ro
       - ./server:/usr/src/app/server/:ro
+      - ./static:/usr/src/app/static/:ro
       - ./e2e:/usr/src/app/e2e/:ro
       - ./chimp.js:/usr/src/app/chimp.js:ro
       - ./package.json:/usr/src/app/package.json:ro
-      - ./jest.json:/usr/src/app/jest.json:ro
+      - ./jest.unit.json:/usr/src/app/jest.unit.json:ro
+      - ./jest.integration.json:/usr/src/app/jest.integration.json:ro
       - ./.babelrc:/usr/src/app/.babelrc:ro
       - ./.eslintrc:/usr/src/app/.eslintrc:ro
       - ./.eslintignore:/usr/src/app/.eslintignore:ro

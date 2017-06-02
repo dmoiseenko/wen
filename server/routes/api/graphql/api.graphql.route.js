@@ -1,7 +1,7 @@
 const bodyParser = require('koa-body');
 const { graphqlKoa, graphiqlKoa } = require('graphql-server-koa');
 
-const schema = require('../../graphql/schema');
+const schema = require('../../../graphql/schema');
 
 
 const isProduction = process.env.NODE_ENV === 'production';

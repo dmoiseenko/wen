@@ -1,44 +1,17 @@
-module.exports.LoginValidationError =
-  class LoginValidationError extends Error {
-    constructor(message) {
-      super(message);
+const ExtendableError = require('es6-error');
 
-      this.name = 'LoginValidationError';
-    }
-  };
+
+module.exports.LoginValidationError =
+  class LoginValidationError extends ExtendableError {};
 
 module.exports.LoginError =
-  class LoginError extends Error {
-    constructor(message) {
-      super(message);
-
-      this.name = 'LoginError';
-    }
-  };
+  class LoginError extends ExtendableError {};
 
 module.exports.InvalidPasswordHashError =
-  class InvalidPasswordHashError extends Error {
-    constructor(message) {
-      super(message);
-
-      this.name = 'InvalidPasswordHashError';
-    }
-  };
+  class InvalidPasswordHashError extends ExtendableError {};
 
 module.exports.UserNotFoundError =
-  class UserNotFoundError extends Error {
-    constructor(message) {
-      super(message);
-
-      this.name = 'UserNotFoundError';
-    }
-  };
+  class UserNotFoundError extends ExtendableError {};
 
 module.exports.InvalidTokenError =
-  class InvalidTokenError extends Error {
-    constructor(message) {
-      super(message);
-
-      this.name = 'InvalidTokenError';
-    }
-  };
+  class InvalidTokenError extends ExtendableError {};
