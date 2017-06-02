@@ -17,11 +17,13 @@ services:
       - ./common:/usr/src/app/common/:ro
       - ./scripts:/usr/src/app/scripts/:ro
       - ./server:/usr/src/app/server/:ro
-#      - ./test:/usr/src/app/test/:ro
-#      - ./chimp.js:/usr/src/app/chimp.js:ro
+      - ./e2e:/usr/src/app/e2e/:ro
+      - ./chimp.js:/usr/src/app/chimp.js:ro
       - ./package.json:/usr/src/app/package.json:ro
       - ./jest.json:/usr/src/app/jest.json:ro
       - ./.babelrc:/usr/src/app/.babelrc:ro
+      - ./.eslintrc:/usr/src/app/.eslintrc:ro
+      - ./.eslintignore:/usr/src/app/.eslintignore:ro
     env_file: .env.dev
     command: npm run watch:api
 

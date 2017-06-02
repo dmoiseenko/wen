@@ -21,7 +21,7 @@ module.exports = {
     filename: 'js/[name]-[chunkhash].js'
   },
   context: __dirname,
-  devtool: 'nosources-source-map',
+  devtool: 'hidden-source-map',
   module: {
     rules: [
       {

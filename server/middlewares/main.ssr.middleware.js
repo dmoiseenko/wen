@@ -10,9 +10,11 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 let appComponent;
 let htmlComponent;
+let assets;
 if (isProduction) {
   appComponent = require('../../build/main/server').default;
   htmlComponent = require('../../build/main/html').default;
+  assets = require('../../public/main/assets.json');
 }
 
 module.exports = () => async (ctx) => {
@@ -39,11 +41,6 @@ module.exports = () => async (ctx) => {
   const renderedAppWithData = await renderToStringWithData(app);
 
   const initialState = { apollo: client.getInitialState() };
-
-  let assets;
-  if (isProduction) {
-    assets = require('../../public/main/assets.json');
-  }
 
   const html = renderToStaticMarkup(htmlComponent({
     root: renderedAppWithData,

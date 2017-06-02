@@ -9,9 +9,9 @@ export default function Notes({ data }) {
         {
           !data.loading &&
           data.notes.map(note =>
-            <div key={note.id}>
+            (<div key={note.id}>
               {note.text}
-            </div>)
+            </div>))
         }
       </ul>
     </div>
