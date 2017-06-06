@@ -9,14 +9,11 @@ DOCKER_COMPOSE="docker-compose
 ${DOCKER_COMPOSE} down -v
 cleanup_command_status=$?
 
-docker system prune -f
-docker system df
-docker system info
-
 if [[ "$cleanup_command_status" -ne 0 ]] ; then
 	exit ${cleanup_command_status}
 fi
 
+docker system prune -f
 
 ${DOCKER_COMPOSE} build
 ${DOCKER_COMPOSE} run --service-ports runner yarn run test
