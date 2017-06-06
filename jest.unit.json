@@ -1,0 +1,7 @@
+{
+  "testMatch": [
+    "**/test/*.test.js?(x)"
+  ],
+  "clearMocks": true,
+  "testEnvironment": "node"
+}

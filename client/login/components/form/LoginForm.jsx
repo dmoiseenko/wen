@@ -1,6 +1,6 @@
 import React from 'react';
-import { Field } from 'redux-form';
 import PropTypes from 'prop-types';
+import { Field } from 'redux-form';
 
 import Input from '../../../common/components/input/Input';
 import { emailField, passwordField } from '../../core/form.constants';
@@ -13,32 +13,32 @@ export default function LoginForm({ signIn }) {
   }
 
   return (
-    <form className="box">
+    <form className="login-form">
       <Field
         name={emailField}
         component={Input}
-        label="Email"
-        placeholder="Email"
+        placeholder="mail@example.com"
         type="text"
+        inputClassName="email-input"
+        iconClassName="fa fa-user"
       />
       <Field
         name={passwordField}
         component={Input}
+        placeholder="●●●●●●●"
         type="password"
-        label="Password"
-        placeholder="Password"
+        inputClassName="password-input"
+        iconClassName="fa fa-lock"
       />
-      <div className="field">
-        <p className="control">
-          <button
-            type="submit"
-            className="button is-primary"
-            onClick={handleSubmit}
-          >
-            Sign In
-          </button>
-        </p>
-      </div>
+      <p className="control login">
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className="button is-primary is-large is-fullwidth"
+        >
+          Login
+        </button>
+      </p>
     </form>
   );
 }

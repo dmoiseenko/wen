@@ -2,35 +2,42 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import Label from './InputLabel';
+import Icon from './InputIcon';
+import InputError from './InputError';
 
-export default function Input({ meta, input, type, label, placeholder }) {
+
+export default function Input({
+  meta,
+  input,
+  type,
+  label,
+  placeholder,
+  inputClassName,
+  iconClassName
+}) {
   const error = meta.touched && meta.error;
 
-  const inputClassName = classnames('input', {
+  const className = classnames('input', inputClassName, {
     'is-danger': error
   });
 
   return (
     <div className="field">
-      <label className="label">
-        {label}
-      </label>
+      <Label label={label} />
       <p className="control has-icon has-icon-right">
         <input
           {...input}
-          className={inputClassName}
+          className={className}
           type={type}
           placeholder={placeholder}
         />
-        <span className="icon is-small">
-          {
-            error && <i className="fa fa-warning" />
-          }
-        </span>
+        <Icon
+          iconClassName={iconClassName}
+          error={error}
+        />
       </p>
-      {
-        error && <p className="help is-danger">{meta.error}</p>
-      }
+      <InputError error={meta.error} />
     </div>
   );
 }
@@ -38,7 +45,15 @@ export default function Input({ meta, input, type, label, placeholder }) {
 Input.propTypes = {
   meta: PropTypes.object.isRequired,
   input: PropTypes.object.isRequired,
+  inputClassName: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
+  iconClassName: PropTypes.string.isRequired
+};
+
+Input.defaultProps = {
+  label: '',
+  inputClassName: '',
+  iconClassName: ''
 };

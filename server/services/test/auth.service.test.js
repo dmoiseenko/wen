@@ -5,6 +5,7 @@ const hashService = require('../hash.service');
 const jwtService = require('../jwt.service');
 const userRepository = require('../../db/repositories/user.repository');
 const authService = require('../auth.service');
+const { InvalidPasswordHashError } = require('../../utils/errors.js');
 
 
 describe('auth.service', () => {
@@ -48,7 +49,8 @@ describe('auth.service', () => {
     it('should throw InvalidPasswordHashError if hash is not verified', async () => {
       hashService.verifyHash.mockReturnValue(false);
 
-      await expect(authService.login({ email, password })).rejects.toBeInstanceOf(Error);
+      await expect(authService.login({ email, password }))
+        .rejects.toBeInstanceOf(InvalidPasswordHashError);
     });
   });
 });

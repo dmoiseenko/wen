@@ -1,6 +1,6 @@
 const Router = require('koa-router');
 
-const graphql = require('../routes/api/api.graphql.route');
+const graphql = require('../routes/api/graphql/api.graphql.route');
 
 
 module.exports = () => {

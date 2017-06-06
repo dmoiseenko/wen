@@ -14,7 +14,9 @@ COPY client client
 COPY common common
 COPY scripts scripts
 COPY server server
-COPY jest.json .
+COPY static static
+COPY jest.unit.json .
+COPY jest.integration.json .
 COPY .babelrc .
 COPY .env.prod .
 COPY e2e e2e

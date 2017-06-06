@@ -9,6 +9,9 @@ DOCKER_COMPOSE="docker-compose
 case $1 in
 "up")
 	${DOCKER_COMPOSE} down
+	docker system prune -f
+  docker system df
+  docker system info
   ${DOCKER_COMPOSE} build
   ${DOCKER_COMPOSE} up -d
 	;;

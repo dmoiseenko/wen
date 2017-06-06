@@ -19,5 +19,3 @@ case $1 in
   echo "First argument must be one of 'up' or 'down'"
 	exit 1;;
 esac
-
-

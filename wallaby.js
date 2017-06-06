@@ -16,13 +16,12 @@ module.exports = function (wallaby) {
       '!server/**/*.spec.js*',
       '!server/**/test/*.jest.js',
       '.env.dev',
-      'jest.json'
+      'jest.unit.json'
     ],
     tests: [
       'client/**/test/*.test.js*',
       'common/**/test/*.test.js',
-      'server/**/test/*.test.js',
-      'server/**/test/*.jest.js'
+      'server/**/test/*.test.js'
     ],
     compilers: {
       'client/**/*.js*': wallaby.compilers.babel()
@@ -33,7 +32,7 @@ module.exports = function (wallaby) {
     },
     testFramework: 'jest',
     setup: function () {
-      const jestConfig = require('./jest.json');
+      const jestConfig = require('./jest.unit.json');
       wallaby.testFramework.configure(jestConfig);
     },
     slowTestThreshold: 200,

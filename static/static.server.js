@@ -1,6 +1,6 @@
 const config = require('../common/config');
 const app = require('./static.koa');
-const logger = require('./utils/logger');
+const logger = require('../server/utils/logger');
 
 
 const port = config.server.port;

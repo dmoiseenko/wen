@@ -25,7 +25,6 @@ function render() {
 
 render();
 
-
 module.exports = () => async (ctx) => {
   if (!isProduction) {
     delete require.cache[require.resolve('../../build/login/server')];

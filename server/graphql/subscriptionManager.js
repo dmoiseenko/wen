@@ -9,9 +9,7 @@ const subscriptionManager = new SubscriptionManager({
   pubsub,
   setupFunctions: {
     noteAdded: () => ({
-      noteAdded: {
-        filter: () => true
-      }
+      noteAdded: {}
     })
   }
 });

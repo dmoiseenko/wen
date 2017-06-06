@@ -5,11 +5,16 @@ const subscriptionManager = require('./graphql/subscriptionManager');
 const config = require('../common/config.js');
 const cookie = require('cookie');
 const jwtService = require('./services/jwt.service');
+const logger = require('./utils/logger.js');
 
 
 const app = new App();
 
-const server = app.listen(config.socket.port);
+const port = config.socket.port;
+
+const server = app.listen(port, () => {
+  logger.info(`Socket server listening on port:${port} in ${process.env.NODE_ENV} mode`);
+});
 
 module.exports.subscriptionServer = new SubscriptionServer(
   {
