@@ -16,7 +16,7 @@ fi
 docker system prune -f
 
 ${DOCKER_COMPOSE} build
-${DOCKER_COMPOSE} run --service-ports runner yarn run test:e2e
+${DOCKER_COMPOSE} run --service-ports runner yarn run test:unit
 docker_command_status=$?
 
 ${DOCKER_COMPOSE} down -v
