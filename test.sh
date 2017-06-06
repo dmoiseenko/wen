@@ -16,7 +16,7 @@ fi
 docker system prune -f
 
 ${DOCKER_COMPOSE} build
-${DOCKER_COMPOSE} run --service-ports runner npm run test:integration
+${DOCKER_COMPOSE} run --service-ports runner npm run test:unit
 echo "lampassssssssssssssssssssssssssssssss"
 docker_command_status=$?
 

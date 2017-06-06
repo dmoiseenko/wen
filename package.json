@@ -117,7 +117,7 @@
     "static": "node static/static.server.js",
     "socket": "node server/socket.server.js",
     "test": "npm run lint:js && npm run test:unit && npm run bootstrap  && npm run test:integration && npm run test:e2e",
-    "test:unit": "jest --forceExit --config jest.unit.json",
+    "test:unit": "jest --runInBand --config jest.unit.json",
     "test:unit:watch": "jest --watch --config jest.unit.json",
     "test:integration": "jest --runInBand --config jest.integration.json",
     "test:integration:watch": "jest --runInBand --watch --config jest.integration.json",
