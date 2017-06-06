@@ -16,3 +16,6 @@ InputErrors.propTypes = {
   error: PropTypes.string.isRequired
 };
 
+InputErrors.defaultProps = {
+  error: ''
+};

@@ -17,6 +17,6 @@ export default function Icon({ iconClassName, error }) {
 
 Icon.propTypes = {
   iconClassName: PropTypes.string.isRequired,
-  error: PropTypes.string.isRequired
+  error: PropTypes.bool.isRequired
 };
 
