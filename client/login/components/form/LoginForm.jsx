@@ -26,7 +26,7 @@ export default function LoginForm({ signIn }) {
         name={passwordField}
         component={Input}
         placeholder="●●●●●●●"
-        type="text"
+        type="password"
         inputClassName="password-input"
         iconClassName="fa fa-lock"
       />
@@ -34,7 +34,7 @@ export default function LoginForm({ signIn }) {
         <button
           type="submit"
           onClick={handleSubmit}
-          className="button is-success is-outlined is-large is-fullwidth"
+          className="button is-primary is-large is-fullwidth"
         >
           Login
         </button>
