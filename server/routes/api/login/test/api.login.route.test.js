@@ -11,28 +11,24 @@ const response = require('../api.login.response');
 const loginRoute = require('../api.login.route');
 
 
-describe('/api/login', () => {
-  describe('route', () => {
-    const router = {
-      post: jest.fn()
-    };
+const router = {
+  post: jest.fn()
+};
 
-    it('should route POST on /api/login', () => {
-      loginRoute(router);
+it('should route POST on /api/login', () => {
+  loginRoute(router);
 
-      expect(router.post).toHaveBeenCalledWith('/api/login', 'composition');
-    });
+  expect(router.post).toHaveBeenCalledWith('/api/login', 'composition');
+});
 
-    it('should have proper composition', () => {
-      loginRoute(router);
+it('should have proper composition', () => {
+  loginRoute(router);
 
-      expect(compose).toHaveBeenCalledWith([
-        bodyParser(),
-        validate,
-        maskInternalErrors,
-        process,
-        response
-      ]);
-    });
-  });
+  expect(compose).toHaveBeenCalledWith([
+    bodyParser(),
+    validate,
+    maskInternalErrors,
+    process,
+    response
+  ]);
 });

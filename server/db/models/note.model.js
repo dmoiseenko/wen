@@ -13,5 +13,15 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
     [noteMapper.text]: {
       type: DataTypes.STRING
     }
+  },
+  {
+    getterMethods: {
+      plain() {
+        return {
+          [commonMapper.id]: this[commonMapper.id],
+          [noteMapper.text]: this.text
+        };
+      }
+    }
   }
 );

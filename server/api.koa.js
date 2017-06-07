@@ -5,7 +5,7 @@ const router = require('koa-router')();
 const publicRoutesMiddleware = require('./middlewares/api.public.middleware');
 const privateRoutesMiddleware = require('./middlewares/api.private.middleware');
 const errorMiddleware = require('./middlewares/error.middleware');
-const authMiddleware = require('./middlewares/auth.middleware');
+const authMiddleware = require('./middlewares/auth/auth.middleware');
 
 
 const app = new App();

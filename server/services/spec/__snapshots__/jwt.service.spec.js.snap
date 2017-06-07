@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should generate token and verify it 1`] = `"eyJhbGciOiJIUzI1NiJ9.OWZiNTIyNmRjMTVjZWU1ZmMxODhiYmVmODBkZjc3NDU.dqH5DqCy5XeciTE9D7yIdLeEVel8HN5dcwH_waQP7as"`;
+
+exports[`should generate token and verify it 2`] = `"data"`;

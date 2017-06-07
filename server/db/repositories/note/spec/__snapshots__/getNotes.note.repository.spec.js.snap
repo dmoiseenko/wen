@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should get all notes 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "text": "asd1",
+  },
+  Object {
+    "id": 2,
+    "text": "asd2",
+  },
+  Object {
+    "id": 3,
+    "text": "asd3",
+  },
+]
+`;

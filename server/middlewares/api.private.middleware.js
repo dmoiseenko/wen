@@ -1,12 +1,9 @@
-const Router = require('koa-router');
-
+const setupRoutes = require('../utils/setupRoutes.js');
 const graphql = require('../routes/api/graphql/api.graphql.route');
+const graphiql = require('../routes/api/graphiql/api.graphiql.route');
 
 
-module.exports = () => {
-  const router = new Router();
-
-  graphql(router);
-
-  return router.routes();
-};
+module.exports = () => setupRoutes([
+  graphql,
+  graphiql,
+]);

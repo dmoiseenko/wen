@@ -1,4 +1,4 @@
-const userRepository = require('../db/repositories/user.repository');
+const getUserById = require('../db/repositories/user/getUserById.user.repository');
 
 
-module.exports.getById = id => userRepository.getUserById(id);
+module.exports.getById = id => getUserById(id);

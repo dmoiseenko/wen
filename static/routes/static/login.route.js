@@ -1,4 +1,3 @@
 const serveLoginMiddleware = require('../../middlewares/login.ssr.middleware');
 
-module.exports = (router, middleware = serveLoginMiddleware) =>
-  router.get('/login', middleware());
+module.exports = router => router.get('/login', serveLoginMiddleware());

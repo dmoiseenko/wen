@@ -5,10 +5,10 @@ const logger = require('koa-logger');
 const Router = require('koa-router');
 
 const errorMiddleware = require('../server/middlewares/error.middleware.js');
-const authMiddleware = require('../server/middlewares/auth.middleware');
+const authMiddleware = require('../server/middlewares/auth/auth.middleware');
 const loginHmrMiddleware = require('./middlewares/login.hmr.middleware');
 const mainHmrMiddleware = require('./middlewares/main.hmr.middleware');
-const redirectMiddleware = require('../server/middlewares/redirect.middleware');
+const redirectMiddleware = require('../server/middlewares/common/redirect.middleware');
 const publicSsrRoutesMiddleware = require('./middlewares/static.public.middleware');
 const privateSsrRoutesMiddleware = require('./middlewares/static.private.middleware');
 const mainServeMiddleware = require('./middlewares/main.serve.middleware');

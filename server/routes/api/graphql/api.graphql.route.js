@@ -1,24 +1,15 @@
+const compose = require('koa-compose');
 const bodyParser = require('koa-body');
-const { graphqlKoa, graphiqlKoa } = require('graphql-server-koa');
 
-const schema = require('../../../graphql/schema');
+const graphqlMiddleware = require('../../../middlewares/graphql.middleware.js');
 
-
-const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = (router) => {
   router.post(
     '/api/graphql',
-    bodyParser(),
-    graphqlKoa(ctx => ({
-      schema,
-      context: { user: ctx.state.user }
-    })));
-
-  if (!isProduction) {
-    router.get(
-      '/api/graphiql',
+    compose([
       bodyParser(),
-      graphiqlKoa({ endpointURL: '/api/graphql' }));
-  }
+      graphqlMiddleware()
+    ])
+  );
 };

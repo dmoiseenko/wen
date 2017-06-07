@@ -1,8 +1,11 @@
+const path = require('path');
 const { makeExecutableSchema } = require('graphql-tools');
 
-const typeDefs = require('../../common/graphql/schemaString');
-const resolvers = require('./resolvers/resolvers');
+const loadTextFile = require('../../common/loadTextFile.js');
 
+
+const typeDefs = loadTextFile(path.join(__dirname, '../../common/graphql/schema.graphqls'));
+const resolvers = require('./resolvers/resolvers');
 
 module.exports = makeExecutableSchema({
   typeDefs,

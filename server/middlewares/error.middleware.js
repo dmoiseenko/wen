@@ -6,6 +6,7 @@ module.exports = () => async (ctx, next) => {
     await next();
   } catch (error) {
     const { status, message } = errorService.handleError(error);
+
     ctx.response.status = status;
     ctx.response.body = {
       error: message
