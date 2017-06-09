@@ -80,7 +80,8 @@ module.exports = ({ entry, output, context }) => ({
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      PREBUILD: true
     }),
     new ExtractTextPlugin({
       filename: 'css/styles.css',

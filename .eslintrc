@@ -6,8 +6,9 @@
     "browser": true,
     "window": true,
     "document": true,
+    "location": true,
     "fetch": true,
-    "API_URL": true
+    "PREBUILD": true
   },
   "parser": "babel-eslint",
   "extends": "airbnb",

@@ -1,6 +1,6 @@
-describe('signIn.module', () => {
+describe('logout.module', () => {
   describe('reducer', () => {
-    it('signIn', () => {
+    it('logout', () => {
       expect(true).toBe(true);
     });
   });

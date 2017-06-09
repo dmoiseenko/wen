@@ -1,7 +1,7 @@
 import { postApiRequest } from '../../common/api';
 
 
-export default function login({ email, password }) {
+export function login({ email, password }) { // eslint-disable-line import/prefer-default-export
   return postApiRequest(
     '/api/login',
     { email, password });

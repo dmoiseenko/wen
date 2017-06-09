@@ -5,11 +5,22 @@ import { StaticRouter } from 'react-router';
 import { createStore } from 'redux';
 
 import Entry from './components/pages/Entry';
+import { initial } from './redux/state';
 
+
+export const store = createStore(
+  state => state,
+  {
+    ...initial
+  }
+);
 
 export default function AppServer({ apolloClient, location, context }) {
   return (
-    <ApolloProvider client={apolloClient} store={createStore(() => {})}>
+    <ApolloProvider
+      client={apolloClient}
+      store={store}
+    >
       <StaticRouter
         location={location}
         context={context}

@@ -8,8 +8,8 @@ export default function Aside() {
         <div className="hero-body">
           <div className="container section">
             <div className="has-text-right">
-              <h1 className="title is-1">The secret of getting ahead is getting started.</h1> <br />
-              <p className="title is-3">Mark Twain</p>
+              <h1 className="title is-2">The secret of getting ahead is getting started.</h1> <br />
+              <p className="title is-4">Mark Twain</p>
             </div>
           </div>
         </div>

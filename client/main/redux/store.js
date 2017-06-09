@@ -1,12 +1,18 @@
-import { createStore, applyMiddleware } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { reducer as form } from 'redux-form';
+import createSagaMiddleware from 'redux-saga';
 
 import reducer from './reducer';
 import { initial as initialState } from './state';
 import apolloClient from '../core/apolloClient';
+import sagas from './sagas';
 
 
-let middleware = applyMiddleware(apolloClient.middleware());
+const sagaMiddleware = createSagaMiddleware();
+let middleware = applyMiddleware(
+  apolloClient.middleware(),
+  sagaMiddleware
+);
 
 if (process.env.NODE_ENV === 'development') {
   middleware = require('redux-devtools-extension') // eslint-disable-line
@@ -27,3 +33,8 @@ export default createStore(
   },
   middleware
 );
+
+const saga = sagaMiddleware.run(sagas);
+saga.done.catch((error) => {
+  console.warn(error); // eslint-disable-line no-console
+});

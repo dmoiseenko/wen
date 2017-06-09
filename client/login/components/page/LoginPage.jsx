@@ -13,7 +13,7 @@ export default function LoginPage() {
         <section className="hero is-fullheight">
           <div className="hero-head">
             <div className="section has-text-centered">
-              <Logo />
+              <Logo large />
             </div>
           </div>
           <div className="hero-body">
