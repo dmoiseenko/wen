@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should query user by email 1`] = `
+Object {
+  "email": "js@mail.com",
+  "firstName": "John",
+  "id": 1,
+  "lastName": "Smith",
+  "passwordHash": "password hash",
+}
+`;

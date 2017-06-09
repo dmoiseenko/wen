@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should process addNote Mutation 1`] = `
+Object {
+  "data": Object {
+    "addNote": Object {
+      "id": 4,
+      "text": "note text",
+    },
+  },
+}
+`;
+
+exports[`should process me query 1`] = `
+Object {
+  "data": Object {
+    "me": Object {
+      "firstName": "John",
+      "id": 1,
+      "lastName": "Smith",
+    },
+  },
+}
+`;
+
+exports[`should process notes query 1`] = `
+Object {
+  "data": Object {
+    "notes": Array [
+      Object {
+        "id": 1,
+        "text": "asd1",
+      },
+      Object {
+        "id": 2,
+        "text": "asd2",
+      },
+      Object {
+        "id": 3,
+        "text": "asd3",
+      },
+    ],
+  },
+}
+`;

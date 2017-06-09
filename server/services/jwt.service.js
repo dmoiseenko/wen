@@ -12,7 +12,7 @@ module.exports.generateToken = (data = {}) => {
   return jwt.sign(encryptedData, config.secret.jwt);
 };
 
-module.exports.verifyToken = (token) => {
+module.exports.verifyTokenAndReturnUserData = (token) => {
   try {
     const encryptedData = jwt.verify(token, config.secret.jwt);
     const dataJSON = cryptoService.decrypt(encryptedData);

@@ -2,7 +2,6 @@ const crypto = require('crypto');
 
 const config = require('../../common/config');
 
-
 module.exports.encrypt = (value) => {
   const cipher = crypto.createCipher('aes-256-cbc', config.secret.crypto);
   let encrypted = cipher.update(value, 'utf8', 'hex');

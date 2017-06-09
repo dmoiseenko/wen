@@ -1,6 +1,6 @@
 /*  eslint-disable no-console */
 
-const bootstrap = require('../server/db/preparations/bootstrap');
+const bootstrap = require('../server/db/bootstrap/bootstrap');
 
 
 bootstrap()

@@ -4,38 +4,34 @@ const authService = require('../../../../services/auth.service.js');
 const process = require('../api.login.process');
 
 
-describe('api/login', () => {
-  describe('process', () => {
-    let ctx;
-    let next;
+let ctx;
+let next;
 
-    beforeEach(() => {
-      next = jest.fn();
-      ctx = {
-        request: {
-          body: 'body'
-        },
-        state: {}
-      };
-      authService.login.mockReturnValue('token');
-    });
+beforeEach(() => {
+  next = jest.fn();
+  ctx = {
+    request: {
+      body: 'body'
+    },
+    state: {}
+  };
+  authService.login.mockReturnValue('token');
+});
 
-    it('should get login token from authService ', async () => {
-      await process(ctx, next);
+it('should get login token from authService ', async () => {
+  await process(ctx, next);
 
-      expect(authService.login).toHaveBeenCalledWith('body');
-    });
+  expect(authService.login).toHaveBeenCalledWith('body');
+});
 
-    it('should pass token to cxt', async () => {
-      await process(ctx, next);
+it('should pass token to cxt', async () => {
+  await process(ctx, next);
 
-      expect(ctx.state.token).toEqual('token');
-    });
+  expect(ctx.state.token).toEqual('token');
+});
 
-    it('should call next', async () => {
-      await process(ctx, next);
+it('should call next', async () => {
+  await process(ctx, next);
 
-      expect(next).toHaveBeenCalled();
-    });
-  });
+  expect(next).toHaveBeenCalled();
 });

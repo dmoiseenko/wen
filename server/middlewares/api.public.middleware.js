@@ -1,14 +1,9 @@
-const Router = require('koa-router');
-
+const setupRoutes = require('../utils/setupRoutes.js');
 const login = require('../routes/api/login/api.login.route');
-const logout = require('../routes/api/api.logout.route');
+const logout = require('../routes/api/logout/api.logout.route');
 
 
-module.exports = () => {
-  const router = new Router();
-
-  login(router);
-  logout(router);
-
-  return router.routes();
-};
+module.exports = () => setupRoutes([
+  login,
+  logout
+]);
