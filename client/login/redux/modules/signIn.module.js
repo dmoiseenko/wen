@@ -1,7 +1,7 @@
 import { createAction } from 'redux-act';
 import { put, call, select, takeEvery } from 'redux-saga/effects';
 
-import login from '../../core/login.api';
+import * as api from '../../core/api';
 import * as signInSelector from '../../core/signIn.selector';
 
 
@@ -53,7 +53,7 @@ export function* signInSaga() {
   const email = yield call(signInSelector.email, state);
   const password = yield call(signInSelector.password, state);
 
-  const { response, error } = yield call(login, { email, password });
+  const { response, error } = yield call(api.login, { email, password });
 
   if (response) {
     yield put.resolve(signInSuccess(response));

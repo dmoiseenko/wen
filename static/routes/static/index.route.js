@@ -1,4 +1,5 @@
 const serveAppMiddleware = require('../../middlewares/main.ssr.middleware');
+const routes = require('../../../common/routes.js');
 
 
-module.exports = router => router.get('/', serveAppMiddleware());
+module.exports = router => router.get(routes.home, serveAppMiddleware());

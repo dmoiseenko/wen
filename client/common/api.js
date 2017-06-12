@@ -17,6 +17,10 @@ export async function apiRequest(url, options) {
     }
   );
 
+  if (response.redirected) {
+    return { response: response.url };
+  }
+
   if (response.ok) {
     const data = await response.json();
     return { response: data };

@@ -20,3 +20,6 @@ Icon.propTypes = {
   error: PropTypes.bool.isRequired
 };
 
+Icon.defaultProps = {
+  error: false
+};

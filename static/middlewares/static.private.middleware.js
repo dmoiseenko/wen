@@ -2,7 +2,7 @@ const Router = require('koa-router');
 
 const index = require('../routes/static/index.route');
 const about = require('../routes/static/about.route');
-const topics = require('../routes/static/topics.route');
+const notes = require('../routes/static/notes.route');
 
 
 module.exports = () => {
@@ -10,7 +10,7 @@ module.exports = () => {
 
   index(router);
   about(router);
-  topics(router);
+  notes(router);
 
   return router.routes();
 };

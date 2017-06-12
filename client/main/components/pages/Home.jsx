@@ -1,10 +1,11 @@
 import React from 'react';
-import Import from '../common/Import';
 
 
 export default () => (
-  <div>
-    <h2>Home data</h2>
-    <Import load={import('./Wrapper')} />
+  <div className="section">
+    <div className="container">
+      <h1 className="title is-3">Hi</h1>
+      {/* <Import load={import('./Wrapper')} />*/}
+    </div>
   </div>
 );
