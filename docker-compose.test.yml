@@ -2,7 +2,7 @@ version: '2'
 
 services:
   selenium:
-    image: selenium/standalone-chrome-debug
+    image: selenium/standalone-chrome:3.4.0
     links:
       - nginx
 
@@ -32,7 +32,7 @@ services:
       context: .
       dockerfile: ./dockerfiles/prod/Dockerfile
     env_file: .env.prod
-    command: npm run bootstrap
+    command: /bin/true
     links:
       - selenium
 

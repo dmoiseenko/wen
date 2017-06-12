@@ -12,9 +12,6 @@ deploy_staging:
   stage: deploy
   script:
     - bash prod.sh up
-  environment:
-    name: staging
-    url: https://wen.moiden.com
   when: manual
   tags:
     - stage

@@ -1,6 +1,9 @@
+const config = require('../../common/config.js');
+
+
 class Page {
   open(path) {
-    return browser.url(`/${path}`);
+    return browser.url(`http://${config.server.host}:${config.server.port}${path}`);
   }
 
   back() {
@@ -8,4 +11,4 @@ class Page {
   }
 }
 
-module.exports = new Page();
+module.exports = Page;

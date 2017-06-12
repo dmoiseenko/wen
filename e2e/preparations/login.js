@@ -1,16 +1,9 @@
-import LoginPage from '../pages/login.page';
+const LoginPage = require('../pages/login.page');
 
 
-export function logIn() {
-  LoginPage.go();
-  LoginPage.waitForLoad();
-  LoginPage.email.setValue('admin@email.diq');
-  LoginPage.password.setValue('20AltaSigma16');
-  LoginPage.clickOnSubmit();
-}
-
-export function logOut() {
-  browser.deleteCookie('datadash');
-  browser.deleteCookie('datadash_session');
-  browser.url('/');
-}
+module.exports = function logIn() {
+  LoginPage.open();
+  LoginPage.emailInput.setValue('admin@email.diq');
+  LoginPage.passwordInput.setValue('20AltaSigma16');
+  LoginPage.loginButton.click();
+};

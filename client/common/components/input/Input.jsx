@@ -23,7 +23,7 @@ export default function Input({
   });
 
   return (
-    <div className="field">
+    <div className="field" id={input.name}>
       <Label label={label} />
       <p className="control has-icon has-icon-right">
         <input

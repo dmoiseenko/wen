@@ -2,7 +2,9 @@ import React from 'react';
 
 
 export default () => (
-  <div>
-    <h2>About data</h2>
+  <div className="section">
+    <div className="container">
+      <h1 className="title is-3">About</h1>
+    </div>
   </div>
 );
