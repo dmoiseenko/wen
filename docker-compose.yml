@@ -31,7 +31,6 @@ services:
       - logspout
 
   runner:
-
     depends_on:
       - nginx
     links:

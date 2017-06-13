@@ -13,10 +13,18 @@ it('should response with 200 and empty body if credentials are valid', async () 
     .expect(200, {});
 });
 
-it('should response with 500 if credentials are invalid', async () => { // TODO
+it('should response with 500 if email are invalid', async () => {
   await getClient()
     .post('/api/login')
     .send({ email: 'js1@mail.com', password: 'password' })
+    .expect(400)
+    .expect({ error: 'Invalid email or password' });
+});
+
+it('should response with 500 if password are invalid', async () => {
+  await getClient()
+    .post('/api/login')
+    .send({ email: 'js@mail.com', password: 'pass' })
     .expect(400)
     .expect({ error: 'Invalid email or password' });
 });

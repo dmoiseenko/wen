@@ -1,37 +1,38 @@
-import { getElement } from '../common/element';
-
-const basePage = require('./base.page');
+const Page = require('./base.page');
 
 
-export default Object.create(basePage, {
-  go: {
-    value(page = 'login') {
-      return this.open(page);
-    },
-  },
-  clickOnSubmit: {
-    value() {
-      getElement('button.button--submit').click();
-    },
-  },
-  waitForLoad: {
-    value() {
-      getElement('#loginForm');
-    },
-  },
-  email: {
-    get() {
-      return getElement('#email');
-    },
-  },
-  password: {
-    get() {
-      return getElement('#password');
-    },
-  },
-  login: {
-    get() {
-      return getElement('.button--submit').getText();
-    },
-  },
-});
+class Login extends Page {
+  get emailInput() {
+    return browser.element('.email-input');
+  }
+
+  get emailError() {
+    return browser.element('#emailField .help');
+  }
+
+  get passwordInput() {
+    return browser.element('#passwordField .password-input');
+  }
+
+  get passwordError() {
+    return browser.element('#passwordField .help');
+  }
+
+  get loginButton() {
+    return browser.element('.login-button');
+  }
+
+  open() {
+    super.open('/login');
+  }
+
+  isOpen() {
+    return browser.isVisible('.login-wrapper');
+  }
+
+  waitForLoad() {
+    return browser.element('.login-button');
+  }
+}
+
+module.exports = new Login();

@@ -23,7 +23,7 @@ waitOn(opts, (err) => {
 
   console.log('Server is ready');
 
-  const command = isWatch ? 'e2e:chimp:watch' : 'e2e:chimp';
+  const command = isWatch ? 'chimp:watch' : 'chimp';
 
   const chimp = spawn('npm', ['run', command]);
 

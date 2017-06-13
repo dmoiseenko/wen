@@ -119,6 +119,12 @@
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@types/validator/-/validator-6.2.0.tgz#020322fe1929f69889eb675a1bdb5a98394b71f0"
 
+"@types/webdriverio@4.7.1":
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/@types/webdriverio/-/webdriverio-4.7.1.tgz#af29850f79e98ebcbb5e647205efce8062055d5c"
+  dependencies:
+    "@types/node" "*"
+
 "@types/ws@0.0.40":
   version "0.0.40"
   resolved "https://registry.yarnpkg.com/@types/ws/-/ws-0.0.40.tgz#c10c705ab30b51531b76f99a4581544edf09756d"

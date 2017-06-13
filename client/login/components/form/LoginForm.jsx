@@ -34,7 +34,7 @@ export default function LoginForm({ signIn }) {
         <button
           type="submit"
           onClick={handleSubmit}
-          className="button is-primary is-large is-fullwidth"
+          className="login-button"
         >
           Login
         </button>

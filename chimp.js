@@ -5,11 +5,16 @@ module.exports = {
   port: config.selenium.port,
   host: config.selenium.host,
   path: './e2e',
-  compiler: 'js:babel-core/register',
   browser: 'chrome',
   webdriverio: {
     baseUrl: `${config.server.host}:${config.server.port}`,
-    waitforTimeout: 10000,
+    waitforTimeout: 2000,
+    capabilities: {
+      browserName: 'chrome',
+      chromeOptions: {
+        args: []
+      }
+    }
   },
   jasmine: true,
   jasmineConfig: {
