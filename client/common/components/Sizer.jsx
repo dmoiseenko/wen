@@ -1,6 +1,7 @@
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
+import isEmpty from 'lodash/isEmpty';
 
 
 class Sizer extends React.Component {
@@ -8,6 +9,8 @@ class Sizer extends React.Component {
     super(props);
 
     this.handleResize = this.handleResize.bind(this);
+
+    this.state = {};
   }
 
   componentDidMount() {
@@ -24,29 +27,18 @@ class Sizer extends React.Component {
   handleResize() {
     const node = ReactDOM.findDOMNode(this); // eslint-disable-line react/no-find-dom-node
     const clientRect = node.getBoundingClientRect();
-    setTimeout(() => {
-      if (!this.unmounted) {
-        this.setState({
-          width: clientRect.width,
-          height: clientRect.height
-        });
-      }
-    }, 0);
+    this.setState({
+      width: clientRect.width,
+      height: clientRect.height
+    });
   }
 
   render() {
-    const { children, width, height } = this.props;
+    const { children } = this.props;
 
-    if (width !== 0 && height !== 0) {
-      this.state = { width, height };
-    }
-
-    if (!this.state) {
+    if (isEmpty(this.state)) {
       return (
-        <div
-          className="sizer"
-          ref={node => (this.sizer = node)}
-        />
+        <div className="sizer" />
       );
     }
 
@@ -63,13 +55,6 @@ class Sizer extends React.Component {
 
 Sizer.propTypes = {
   children: PropTypes.node.isRequired,
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired
-};
-
-Sizer.defaultProps = {
-  width: 0,
-  height: 0
 };
 
 export default Sizer;
