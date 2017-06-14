@@ -1,0 +1,11 @@
+.index {
+  height: 100%;
+}
+
+.nav__topbar {
+  height: 75px;
+}
+
+.section__content {
+  height: calc(100vh - 75px);
+}

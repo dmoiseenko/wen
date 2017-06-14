@@ -12,6 +12,7 @@ deploy_staging:
   stage: deploy
   script:
     - bash prod.sh up
-  when: manual
+  only:
+    - master
   tags:
     - stage

@@ -11,6 +11,7 @@
     "bulmaswatch": "0.4.1",
     "classnames": "2.2.5",
     "cookie": "0.3.1",
+    "d3": "4.9.1",
     "es6-error": "4.0.2",
     "font-awesome": "4.7.0",
     "graphql": "0.9.6",

@@ -1,23 +1,17 @@
 import React from 'react';
 
-import Logo from '../../../common/components/Logo';
-import NavBarContainer from './NavBar.container';
-import NavToggleContainer from './NavToggle.container';
+import NavBarContainer from './nav/NavBar.container';
+import NavToggleContainer from './nav/NavToggle.container';
+import NavLogo from './nav/NavLogo';
 
 
 function TopBar() {
   return (
-    <nav className="nav">
-      <div className="container">
-        <div className="nav-left">
-          <div className="nav-item">
-            <Logo />
-          </div>
-        </div>
-        <NavToggleContainer />
-        <NavBarContainer />
-      </div>
-    </nav>
+    <div className="container">
+      <NavLogo />
+      <NavToggleContainer />
+      <NavBarContainer />
+    </div>
   );
 }
 

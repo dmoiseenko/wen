@@ -5,7 +5,7 @@ import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter } from 'react-router-dom';
 
 import '../scss/styles.scss';
-import Entry from './components/pages/Entry';
+import Index from './components/index/Index';
 
 
 export default function AppClient({ apolloClient, store }) {
@@ -13,7 +13,7 @@ export default function AppClient({ apolloClient, store }) {
     <AppContainer>
       <ApolloProvider client={apolloClient} store={store}>
         <BrowserRouter>
-          <Entry />
+          <Index />
         </BrowserRouter>
       </ApolloProvider>
     </AppContainer>
