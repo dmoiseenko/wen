@@ -102,6 +102,7 @@
     "url-loader": "0.5.8",
     "wait-on": "2.0.2",
     "webpack": "2.6.1",
+    "webpack-bundle-analyzer": "2.8.2",
     "webpack-node-externals": "1.6.0"
   },
   "license": "ISC",

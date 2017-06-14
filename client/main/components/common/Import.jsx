@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Children } from 'react';
 import PropsTypes from 'prop-types';
 
 
@@ -27,9 +27,10 @@ class Import extends Component {
 
   render() {
     if (this.state.mod) {
-      return this.state.mod();
+      return React.cloneElement(Children.only(this.state.mod()));
     }
-    return <div>loading</div>;
+
+    return null;
   }
 }
 
