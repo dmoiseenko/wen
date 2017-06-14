@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
 import NavToggle from './NavToggle';
-import { isOpenSelector } from '../../redux/selector/menu.selector';
-import { openCloseMenu } from '../../redux/modules/menu.module';
+import { isOpenSelector } from '../../../redux/selector/menu.selector';
+import { openCloseMenu } from '../../../redux/modules/menu.module';
 
 
 export function mapStateToProps(state) {

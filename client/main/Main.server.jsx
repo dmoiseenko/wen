@@ -4,7 +4,7 @@ import { ApolloProvider } from 'react-apollo';
 import { StaticRouter } from 'react-router';
 import { createStore } from 'redux';
 
-import Entry from './components/pages/Entry';
+import Index from './components/index/Index';
 import { initial } from './redux/state';
 
 
@@ -25,7 +25,7 @@ export default function AppServer({ apolloClient, location, context }) {
         location={location}
         context={context}
       >
-        <Entry />
+        <Index />
       </StaticRouter>
     </ApolloProvider>
   );

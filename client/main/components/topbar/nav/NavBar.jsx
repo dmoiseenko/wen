@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import LogoutContainer from './logout/Logout.container';
+import LogoutContainer from '../logout/Logout.container';
 import NavLinkContainer from './NavLink.container';
-import * as routes from '../../../../common/routes';
+import * as routes from '../../../../../common/routes';
 
 
 export default function NavBar({ isOpen }) {
@@ -21,6 +21,10 @@ export default function NavBar({ isOpen }) {
       <NavLinkContainer
         route={routes.notes}
         label="Notes"
+      />
+      <NavLinkContainer
+        route={routes.graph}
+        label="Graph"
       />
       <NavLinkContainer
         route={routes.about}
