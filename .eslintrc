@@ -9,7 +9,7 @@
     "location": true,
     "fetch": true,
     "PREBUILD": true,
-    "$": true,
+    "jasmine": true
   },
   "parser": "babel-eslint",
   "extends": "airbnb",
