@@ -1,7 +1,7 @@
-export const initial = {
-  apollo: PREBUILD ? {} : window.__APOLLO_STATE__.apollo // eslint-disable-line
-};
+/* eslint-disable */
 
-export const test = {
-  apollo: {}
-};
+export const initial = PREBUILD ? {} : window.__APOLLO_STATE__.apollo;
+
+export const test = {};
+
+/* eslint-enable */

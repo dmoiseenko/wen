@@ -28,9 +28,7 @@ const combinedReducer = (state, action) =>
 
 export default createStore(
   combinedReducer,
-  {
-    ...initialState
-  },
+  initialState,
   middleware
 );
 

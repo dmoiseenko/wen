@@ -18,10 +18,11 @@ export default class Cloth extends Component {
   }
 
   renderCanvas() {
+    const { width, height } = this.props;
     const canvas = this.canvas;
 
-    const width = canvas.width;
-    const height = canvas.height;
+    canvas.width = width;
+    canvas.height = height;
 
     const context = canvas.getContext('2d');
 
