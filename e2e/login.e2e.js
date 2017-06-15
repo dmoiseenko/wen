@@ -3,12 +3,14 @@ const logOut = require('./preparations/logout');
 const HomePage = require('./pages/home.page');
 
 
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+
 describe('Login', () => {
   beforeEach(() => {
     logOut();
   });
 
-  it('should be able to login with correct credentials', () => {
+  it('should be able to login with correct credentials @watch', () => {
     LoginPage.open();
     LoginPage.waitForLoad();
     LoginPage.emailInput.setValue('js@mail.com');
@@ -17,6 +19,8 @@ describe('Login', () => {
     HomePage.waitForLoad();
 
     const actual = HomePage.isOpen();
+
+    console.log(jasmine);
 
     expect(actual).toEqual(true);
   });
