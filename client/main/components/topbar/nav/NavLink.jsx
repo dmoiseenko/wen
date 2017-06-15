@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 
-export default function NavigationLink({ route, label, openCloseMenu }) {
+export default function NavigationLink({ route, label, closeMenu }) {
   function handleClickNavLink() {
-    openCloseMenu();
+    closeMenu();
   }
 
   return (
@@ -24,6 +24,5 @@ export default function NavigationLink({ route, label, openCloseMenu }) {
 NavigationLink.propTypes = {
   route: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  openCloseMenu: PropTypes.func.isRequired
+  closeMenu: PropTypes.func.isRequired
 };
-

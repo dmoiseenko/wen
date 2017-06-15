@@ -3,7 +3,7 @@ import { compose } from 'recompose';
 import { withRouter } from 'react-router-dom';
 
 import NavLink from './NavLink';
-import { openCloseMenu } from '../../../redux/modules/menu.module';
+import { closeMenu } from '../../../redux/modules/menu.module';
 
 
 export function mapStateToProps(state, { route, label }) {
@@ -14,7 +14,7 @@ export function mapStateToProps(state, { route, label }) {
 }
 
 export const mapDispatchToProps = {
-  openCloseMenu
+  closeMenu
 };
 
 export default compose(

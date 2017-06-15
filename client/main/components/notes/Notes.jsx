@@ -1,17 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Note from './Note';
 
-export default function Notes({ data }) {
+
+export default function Notes({ notes, loading }) {
   return (
-    <div>
+    <div className="content">
       <ul>
         {
-          !data.loading &&
-          data.notes.map(note =>
-            (<div key={note.id}>
-              {note.text}
-            </div>))
+          !loading &&
+          notes.map(note =>
+            (
+              <Note
+                key={note.id}
+                note={note}
+              />
+            ))
         }
       </ul>
     </div>
@@ -19,5 +24,10 @@ export default function Notes({ data }) {
 }
 
 Notes.propTypes = {
-  data: PropTypes.object.isRequired
+  notes: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired
+};
+
+Notes.defaultProps = {
+  notes: [],
 };

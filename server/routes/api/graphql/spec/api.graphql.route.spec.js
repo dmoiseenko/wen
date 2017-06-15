@@ -5,8 +5,8 @@ const loadTextFile = require('../../../../../common/loadTextFile.js');
 const login = require('../../utils/login');
 const getClient = require('../../utils/getClient');
 
-const me = loadTextFile(path.join(__dirname, '../../../../../common/graphql/me.graphql'));
-const notes = loadTextFile(path.join(__dirname, '../../../../../common/graphql/notes.graphql'));
+const me = loadTextFile(path.join(__dirname, '../../../../../common/graphql/getUser.graphql'));
+const notes = loadTextFile(path.join(__dirname, '../../../../../common/graphql/getAllNotes.graphql'));
 const addNote = loadTextFile(path.join(__dirname, '../../../../../common/graphql/addNote.graphql'));
 
 

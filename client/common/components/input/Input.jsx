@@ -16,7 +16,7 @@ export default function Input({
   inputClassName,
   iconClassName
 }) {
-  const error = meta.touched && meta.error;
+  const error = meta.touched && !!meta.error;
 
   const className = classnames('input', inputClassName, {
     'is-danger': error
