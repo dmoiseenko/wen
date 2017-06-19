@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-export default function NewNote({ addNote, noteText }) {
+export default function NewNote({ addNote }) {
   function handleClick(e) {
     e.preventDefault();
-    addNote(noteText);
+    addNote();
   }
 
   return (
     <p className="control">
       <button
         type="submit"
-        className="button is-primary"
+        className="button is-medium is-primary"
         onClick={handleClick}
       >
         Add Note
@@ -23,5 +23,4 @@ export default function NewNote({ addNote, noteText }) {
 
 NewNote.propTypes = {
   addNote: PropTypes.func.isRequired,
-  noteText: PropTypes.string.isRequired
 };

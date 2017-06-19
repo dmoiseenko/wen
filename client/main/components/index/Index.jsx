@@ -7,6 +7,7 @@ import Notes from '../pages/NotesPage';
 import About from '../pages/AboutPage';
 import * as routes from '../../../../common/routes';
 import Graph from '../pages/GraphPage';
+import NotificationsContainer from '../notification/Notifications.container';
 
 
 export default function Index() {
@@ -21,6 +22,7 @@ export default function Index() {
         <Route path={routes.notes} component={Notes} />
         <Route path={routes.graph} component={Graph} />
       </section>
+      <NotificationsContainer />
     </div>
   );
 }

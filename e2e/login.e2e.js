@@ -20,8 +20,6 @@ describe('Login', () => {
 
     const actual = HomePage.isOpen();
 
-    console.log(jasmine);
-
     expect(actual).toEqual(true);
   });
 

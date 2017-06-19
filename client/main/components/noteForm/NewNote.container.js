@@ -5,22 +5,20 @@ import { compose } from 'recompose';
 import NewNote from './NewNote';
 import addNoteMutation from '../../../../common/graphql/addNote.graphql';
 import { noteTextSelector } from '../../redux/selector/noteForm.selector';
+import genAddNote from '../../redux/modules/newNote.module';
 
 
 export function mapStateToProps(state) {
   return {
-    noteText: noteTextSelector(state)
+    noteText: noteTextSelector(state),
   };
 }
 
-export const props = ({ mutate, ownProps }) => ({
-  ...ownProps,
-  addNote: (noteText) => {
-    mutate({ variables: { text: noteText } });
-  }
+export const mapProps = props => ({
+  addNote: genAddNote(props)
 });
 
 export default compose(
   connect(mapStateToProps),
-  graphql(addNoteMutation, { props })
+  graphql(addNoteMutation, { props: mapProps })
 )(NewNote);

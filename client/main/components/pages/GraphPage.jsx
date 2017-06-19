@@ -6,9 +6,9 @@ import Import from '../common/Import';
 export default function GraphPage() {
   return (
     <div className="container">
-      <h1 className="subtitle is-2">
-        Touch and Drag
-      </h1>
+      <div className="content">
+        <h1>Touch And Drag</h1>
+      </div>
       <Import load={import('../graph/Graph')} />
     </div>
   );

@@ -1,4 +1,4 @@
-import * as signIn from './states/signIn.state';
+import * as signIn from './state/signIn.state';
 
 
 export const initial = {

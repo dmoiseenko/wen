@@ -1,0 +1,16 @@
+.notifications {
+  position: fixed;
+  padding: 0 10px 10px;
+  z-index: 997;
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+}
+
+.notification {
+  cursor: pointer;
+  opacity: 1;
+  padding-right: 1.25rem;
+  transition: 0.3s ease-in-out;
+}

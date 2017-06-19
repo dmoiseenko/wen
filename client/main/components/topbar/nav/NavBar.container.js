@@ -1,13 +1,18 @@
 import { connect } from 'react-redux';
+import { compose } from 'recompose';
+import { withRouter } from 'react-router-dom';
 
 import NavBar from './NavBar';
-import { isOpenSelector } from '../../../redux/selector/menu.selector';
+import { isMenuOpenSelector } from '../../../redux/selector/menu.selector';
 
 
 export function mapStateToProps(state) {
   return {
-    isOpen: isOpenSelector(state)
+    isOpen: isMenuOpenSelector(state)
   };
 }
 
-export default connect(mapStateToProps)(NavBar);
+export default compose(
+  withRouter,
+  connect(mapStateToProps),
+)(NavBar);
