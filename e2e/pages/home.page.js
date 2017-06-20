@@ -15,11 +15,11 @@ class Home extends Page {
   }
 
   waitForLoad() {
-    return this.navigation.waitForExist(500);
+    return this.navigation.waitForExist(2000);
   }
 
   wasNotLoad() {
-    return this.navigation.waitForExist(500, true);
+    return this.navigation.waitForExist(2000, true);
   }
 }
 

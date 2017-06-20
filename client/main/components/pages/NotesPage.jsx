@@ -7,7 +7,7 @@ import NoteFormContainer from '../noteForm/NoteForm.container';
 export default () => (
   <div className="container">
     <div className="content">
-      <h1>Add New Note</h1>
+      <h2>Add New Note</h2>
     </div>
     <NotesContainer />
     <NoteFormContainer />

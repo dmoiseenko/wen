@@ -23,7 +23,7 @@ export default function LoginPage() {
                   <LoginFormContainer />
                   <div className="section forgot-password">
                     <p className="has-text-centered">
-                      <a href="https://moiden.com/dmoiseenko/wen">Need help?</a>
+                      <a href="https://moiden.com/dmoiseenko/wen/wikis/demo-credentials">Need help?</a>
                     </p>
                   </div>
                 </div>

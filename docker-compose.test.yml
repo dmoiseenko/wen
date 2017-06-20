@@ -11,21 +11,21 @@ services:
       context: .
       dockerfile: ./dockerfiles/prod/Dockerfile
     env_file: .env.prod
-    command: npm run api
+    command: yarn run api
 
   static:
     build:
       context: .
       dockerfile: ./dockerfiles/prod/Dockerfile
     env_file: .env.prod
-    command: npm run static
+    command: yarn run static
 
   socket:
     build:
       context: .
       dockerfile: ./dockerfiles/prod/Dockerfile
     env_file: .env.prod
-    command: npm run socket
+    command: yarn run socket
 
   runner:
     build:

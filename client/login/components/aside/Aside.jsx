@@ -11,7 +11,7 @@ export default function Aside() {
             <h1 className="title is-2">The secret of getting ahead is getting started.</h1><br />
             <p className="title is-4">Mark Twain</p>
           </div>
-          <p className="has-text-centered">Image © Glenn Carstens-Peters via unsplash</p>
+          <p className="has-text-centered">Image © Erik Heddema via unsplash</p>
         </div>
       </section>
     </div>

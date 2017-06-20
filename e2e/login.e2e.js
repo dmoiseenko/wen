@@ -10,7 +10,7 @@ describe('Login', () => {
     logOut();
   });
 
-  it('should be able to login with correct credentials @watch', () => {
+  it('should be able to login with correct credentials', () => {
     LoginPage.open();
     LoginPage.waitForLoad();
     LoginPage.emailInput.setValue('js@mail.com');

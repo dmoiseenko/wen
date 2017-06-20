@@ -14,11 +14,10 @@ const user = {
 };
 const email = 'email';
 const password = 'password';
-const token = 'token';
 
 getUserByEmail.mockReturnValue(Promise.resolve(user));
 hashService.verifyHash.mockReturnValue(true);
-jwtService.generateToken.mockReturnValue(token);
+jwtService.generateToken.mockReturnValue('token');
 
 it('should get user by email', async () => {
   await authService.login({ email, password });

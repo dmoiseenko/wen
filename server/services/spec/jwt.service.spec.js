@@ -10,7 +10,7 @@ it('should generate token and verify it', async () => {
 });
 
 it('should generate token and verify it', async () => {
-  const token = 'eyJhbGciOiJIUzI1NiJ9.OWZiNTIyNmRjMTVjZWU1ZmMxODhiYmVmODBkZjc3NDU.dqH5DqCy5XeciTE9D7yIdLeEVel8HN5dcwH_waQP7as';
+  const token = 'eyJhbGciOiJIUzI1NiJ9.MDQzMmQ5ODU1Zjdk.KiAacE8kqxVSecWzuwDeLLp9EB0z19VrZiIuI7_iiQ0';
 
   const actual = await jwtService.verifyTokenAndReturnUserData(token);
 

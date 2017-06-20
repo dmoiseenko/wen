@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createNote should publish noteAdded message with created note 1`] = `
+Object {
+  "id": 4,
+  "text": "note text by subscription",
+}
+`;
+
+exports[`createNote should return created note 1`] = `
+Object {
+  "id": 4,
+  "text": "note text",
+}
+`;
+
+exports[`getNotes should get all notes 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "text": "asd1",
+  },
+  Object {
+    "id": 2,
+    "text": "asd2",
+  },
+  Object {
+    "id": 3,
+    "text": "asd3",
+  },
+]
+`;
