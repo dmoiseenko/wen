@@ -31,5 +31,5 @@ exit
 ```
 #!bash
 
-bash dev.logs.sh
+bash logs.sh
 ```
