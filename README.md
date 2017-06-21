@@ -15,21 +15,13 @@
 bash dev.sh
 ```
 
-```
-open in browser http://localhost:3000
-```
+Open in browser http://localhost:3000
+
+Enter [Demo credentials](https://moiden.com/dmoiseenko/wen/wikis/demo-credentials)
 
 ```
 #!bash
 # to return back to host machine and clean up created containers
 
 exit
-```
-
-**To see logs**
-
-```
-#!bash
-
-bash logs.sh
 ```
