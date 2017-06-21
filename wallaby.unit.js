@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 module.exports = function (wallaby) {
-  process.env.NODE_ENV = 'development';
+  process.env.NODE_ENV = 'test';
 
   return {
     files: [
@@ -10,7 +10,7 @@ module.exports = function (wallaby) {
       'static/**/*.js',
       'common/**/*.graphql*',
       'common/**/*.js',
-      '!client/**/*.snap',
+      'client/**/*.snap',
       '!client/**/test/*.test.js*',
       '!common/**/test/*.test.js',
       '!server/**/test/*.test.js',

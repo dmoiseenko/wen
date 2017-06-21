@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`signInFailureSaga should have proper composition 1`] = `
+Object {
+  "put": Array [
+    Object {
+      "@@redux-saga/IO": true,
+      "PUT": Object {
+        "action": Object {
+          "payload": "error",
+          "type": "[4] sign in failure",
+        },
+        "channel": null,
+        "resolve": true,
+      },
+    },
+    Object {
+      "@@redux-saga/IO": true,
+      "PUT": Object {
+        "action": Object {
+          "error": true,
+          "meta": Object {
+            "form": "signInForm",
+          },
+          "payload": Object {
+            "emailField": "error",
+            "passwordField": "error",
+          },
+          "type": "@@redux-form/STOP_SUBMIT",
+        },
+        "channel": null,
+      },
+    },
+  ],
+}
+`;

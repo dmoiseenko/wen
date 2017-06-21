@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not render if no error 1`] = `null`;
+
+exports[`should render 1`] = `
+<p
+  className="help is-danger"
+>
+  error
+</p>
+`;

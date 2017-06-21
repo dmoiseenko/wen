@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducer signIn 1`] = `
+Object {
+  "signIn": Object {
+    "loaded": false,
+    "loading": true,
+  },
+}
+`;
+
+exports[`reducer signInFailure 1`] = `
+Object {
+  "signIn": Object {
+    "loaded": false,
+    "loading": false,
+  },
+}
+`;
+
+exports[`reducer signInSuccess 1`] = `
+Object {
+  "signIn": Object {
+    "loaded": true,
+    "loading": false,
+  },
+}
+`;

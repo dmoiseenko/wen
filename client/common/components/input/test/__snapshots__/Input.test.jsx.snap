@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div
+  className="field"
+  id="inputName"
+>
+  <label
+    className="label"
+  >
+    inputLabel
+  </label>
+  <p
+    className="control has-icon has-icon-right"
+  >
+    <input
+      className="input inputClassName"
+      name="inputName"
+      placeholder="inputPlaceholder"
+      type="inputType"
+    />
+    <span
+      className="icon"
+    >
+      <i
+        className="iconClassName"
+      />
+    </span>
+  </p>
+</div>
+`;
+
+exports[`should render error 1`] = `
+<div
+  className="field"
+  id="inputName"
+>
+  <label
+    className="label"
+  >
+    inputLabel
+  </label>
+  <p
+    className="control has-icon has-icon-right"
+  >
+    <input
+      className="input inputClassName is-danger"
+      name="inputName"
+      placeholder="inputPlaceholder"
+      type="inputType"
+    />
+    <span
+      className="icon"
+    >
+      <i
+        className="fa fa-warning"
+      />
+    </span>
+  </p>
+  <p
+    className="help is-danger"
+  >
+    error
+  </p>
+</div>
+`;

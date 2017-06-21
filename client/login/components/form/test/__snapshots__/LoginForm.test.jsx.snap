@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginForm /> should render 1`] = `
+<form
+  className="login-form"
+>
+  <Field
+    component={[Function]}
+    iconClassName="fa fa-user"
+    inputClassName="email-input"
+    name="emailField"
+    placeholder="mail@example.com"
+    type="text"
+  />
+  <Field
+    component={[Function]}
+    iconClassName="fa fa-lock"
+    inputClassName="password-input"
+    name="passwordField"
+    placeholder="●●●●●●●"
+    type="password"
+  />
+  <p
+    className="control login"
+  >
+    <button
+      className="login-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Login
+    </button>
+  </p>
+</form>
+`;

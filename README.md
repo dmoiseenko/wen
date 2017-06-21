@@ -2,16 +2,16 @@
 
 ### Requirements ###
 
-* Docker v17 or higher
-* Docker Compose v1.13 or higher
-* Bash Shell v4 or higher
+* Docker v17 or later
+* Docker Compose v1.13 or later
+* Bash Shell v4 or later
 
 ### [Documentation](https://moiden.com/dmoiseenko/wen/wikis/home) ###
 
 ### Quick start ###
 
 ```
-#!bash
+#bash
 
 bash dev.sh
 ```
@@ -21,8 +21,8 @@ Open http://localhost:3000
 Use [Demo credentials](https://moiden.com/dmoiseenko/wen/wikis/demo-credentials)
 
 ```
-#!bash
-# to return back to host machine and clean up created containers
+#bash
+#to return back to host machine and clean up environment
 
 exit
 ```
