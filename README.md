@@ -12,7 +12,7 @@
 ```
 #!bash
 
-bash dev.start.sh
+bash dev.sh up
 ```
 
 ```
@@ -32,12 +32,4 @@ exit
 #!bash
 
 bash dev.logs.sh
-```
-
-### Clean ###
-
-```
-#!bash
-
-bash dev.stop.sh
 ```
