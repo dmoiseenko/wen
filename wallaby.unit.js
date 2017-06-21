@@ -10,19 +10,19 @@ module.exports = function (wallaby) {
       'static/**/*.js',
       'common/**/*.graphql*',
       'common/**/*.js',
-      'client/**/*.snap',
-      '!client/**/*.test.js*',
-      '!common/**/*.test.js',
-      '!server/**/*.test.js',
-      '!static/**/*.test.js',
-      '.env.dev',
+      '!client/**/*.snap',
+      '!client/**/test/*.test.js*',
+      '!common/**/test/*.test.js',
+      '!server/**/test/*.test.js',
+      '!static/**/test/*.test.js',
+      '.env.dev.test',
       'jest.unit.json'
     ],
     tests: [
-      'client/**/*.test.js*',
-      'common/**/*.test.js',
-      'server/**/*.test.js',
-      'static/**/*.test.js'
+      'client/**/test/*.test.js*',
+      'common/**/test/*.test.js',
+      'server/**/test/*.test.js',
+      'static/**/test/*.test.js'
     ],
     compilers: {
       'client/**/*.js*': wallaby.compilers.babel()

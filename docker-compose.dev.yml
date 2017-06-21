@@ -13,21 +13,21 @@ services:
       context: .
       dockerfile: ./dockerfiles/dev/Dockerfile
     volumes:
-      - ./client:/usr/src/app/client/:ro
-      - ./common:/usr/src/app/common/:ro
-      - ./scripts:/usr/src/app/scripts/:ro
-      - ./server:/usr/src/app/server/:ro
-      - ./static:/usr/src/app/static/:ro
-      - ./e2e:/usr/src/app/e2e/:ro
-      - ./chimp.js:/usr/src/app/chimp.js:ro
-      - ./package.json:/usr/src/app/package.json:ro
-      - ./jest.unit.json:/usr/src/app/jest.unit.json:ro
-      - ./jest.integration.json:/usr/src/app/jest.integration.json:ro
-      - ./.babelrc:/usr/src/app/.babelrc:ro
-      - ./.eslintrc:/usr/src/app/.eslintrc:ro
-      - ./.eslintignore:/usr/src/app/.eslintignore:ro
+      - ./client:/usr/src/app/client/
+      - ./common:/usr/src/app/common/
+      - ./scripts:/usr/src/app/scripts/
+      - ./server:/usr/src/app/server/
+      - ./static:/usr/src/app/static/
+      - ./e2e:/usr/src/app/e2e/
+      - ./chimp.js:/usr/src/app/chimp.js
+      - ./package.json:/usr/src/app/package.json
+      - ./jest.unit.json:/usr/src/app/jest.unit.json
+      - ./jest.integration.json:/usr/src/app/jest.integration.json
+      - ./.babelrc:/usr/src/app/.babelrc
+      - ./.eslintrc:/usr/src/app/.eslintrc
+      - ./.eslintignore:/usr/src/app/.eslintignore
     env_file: .env.dev
-    command: npm run watch:api
+    command: yarn run watch:api
 
   static:
     build:
@@ -36,7 +36,7 @@ services:
     volumes_from:
       - api
     env_file: .env.dev
-    command: npm run watch:static
+    command: yarn run watch:static
 
   socket:
     build:
@@ -45,7 +45,7 @@ services:
     volumes_from:
       - api
     env_file: .env.dev
-    command: npm run watch:socket
+    command: yarn run watch:socket
 
   nginx:
     ports:
@@ -66,3 +66,8 @@ services:
     env_file: .env.dev
     ports:
       - '5432:5432'
+
+  redis:
+    env_file: .env.dev
+    ports:
+      - '6379:6379'

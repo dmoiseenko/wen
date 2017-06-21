@@ -3,7 +3,7 @@ const path = require('path');
 const bootstrap = require('../../../../db/bootstrap/bootstrap');
 const loadTextFile = require('../../../../../common/loadTextFile.js');
 const login = require('../../utils/login');
-const getClient = require('../../utils/getClient');
+const getClient = require('../../utils/getHttpClient');
 
 const me = loadTextFile(path.join(__dirname, '../../../../../common/graphql/getUser.graphql'));
 const notes = loadTextFile(path.join(__dirname, '../../../../../common/graphql/getAllNotes.graphql'));

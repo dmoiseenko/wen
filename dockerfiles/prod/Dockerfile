@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY yarn.lock .
 COPY package.json .
 
-RUN apk add --no-cache make gcc g++ python && \
+RUN apk add --no-cache make gcc g++ python bash && \
     yarn && \
     yarn cache clean && \
     apk del make gcc g++ python

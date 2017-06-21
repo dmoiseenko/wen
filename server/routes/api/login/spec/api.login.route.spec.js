@@ -1,5 +1,5 @@
 const bootstrap = require('../../../../db/bootstrap/bootstrap');
-const getClient = require('../../utils/getClient');
+const getClient = require('../../utils/getHttpClient');
 
 
 beforeEach(async () => {

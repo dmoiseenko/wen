@@ -8,7 +8,10 @@ export default function Logout({ logout }) {
   }
 
   return (
-    <a className="button is-medium is-primary" onClick={handleClick}>
+    <a
+      className="button is-primary"
+      onClick={handleClick}
+    >
       Log out
     </a>
   );

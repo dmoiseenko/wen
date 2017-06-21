@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 export default function Note({ note }) {
   return (
     <li>
-      <h4>
+      <h5>
         {note.text}
-      </h4>
+      </h5>
     </li>
   );
 }

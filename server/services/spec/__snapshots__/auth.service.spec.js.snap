@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login should provide auth token 1`] = `"eyJhbGciOiJIUzI1NiJ9.NWQ3NGQxOTUxYzY1MTVlYw.672rA3xm7fgXNOYpZAtSVO1-NpS3cAwN0Eq3hTxVxjA"`;
