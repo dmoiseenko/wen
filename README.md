@@ -6,6 +6,7 @@
 * [Docker Compose v1.13 or higher](https://docs.docker.com/compose/)
 * [Bash Shell v4 or higher](https://www.gnu.org/software/bash/) 
 
+### [Documentation](https://moiden.com/dmoiseenko/wen/wikis/home) ###
 
 ### Quick start ###
 
@@ -15,9 +16,10 @@
 bash dev.sh
 ```
 
-Open in browser http://localhost:3000
+Open http://localhost:3000
 
-Enter [Demo credentials](https://moiden.com/dmoiseenko/wen/wikis/demo-credentials)
+Use [Demo credentials](https://moiden.com/dmoiseenko/wen/wikis/demo-credentials)
+
 
 ```
 #!bash
