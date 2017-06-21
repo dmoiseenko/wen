@@ -2,9 +2,9 @@
 
 ### Requirements ###
 
-* [Docker v17 or higher](https://www.docker.com/community-edition)
-* [Docker Compose v1.13 or higher](https://docs.docker.com/compose/)
-* [Bash Shell v4 or higher](https://www.gnu.org/software/bash/) 
+* Docker v17 or higher
+* Docker Compose v1.13 or higher
+* Bash Shell v4 or higher
 
 ### [Documentation](https://moiden.com/dmoiseenko/wen/wikis/home) ###
 
@@ -19,7 +19,6 @@ bash dev.sh
 Open http://localhost:3000
 
 Use [Demo credentials](https://moiden.com/dmoiseenko/wen/wikis/demo-credentials)
-
 
 ```
 #!bash
