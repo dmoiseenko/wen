@@ -12,7 +12,7 @@
 ```
 #!bash
 
-bash dev.sh up
+bash dev.sh
 ```
 
 ```

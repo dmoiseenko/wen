@@ -16,6 +16,7 @@ case $1 in
 	${DOCKER_COMPOSE} down
 	;;
 *)
-  echo "First argument must be one of 'up' or 'down'"
-	exit 1;;
+  ${DOCKER_COMPOSE} build
+  ${DOCKER_COMPOSE} run --service-ports runner bash -c "yarn run bootstrap && bash"
+  ${DOCKER_COMPOSE} down
 esac
