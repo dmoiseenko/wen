@@ -20,7 +20,6 @@ services:
       - ./static:/usr/src/app/static/
       - ./e2e:/usr/src/app/e2e/
       - ./chimp.js:/usr/src/app/chimp.js
-      - ./package.json:/usr/src/app/package.json
       - ./jest.unit.json:/usr/src/app/jest.unit.json
       - ./jest.integration.json:/usr/src/app/jest.integration.json
       - ./.babelrc:/usr/src/app/.babelrc
