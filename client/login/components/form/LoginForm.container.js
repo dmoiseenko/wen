@@ -3,14 +3,14 @@ import { reduxForm } from 'redux-form';
 
 import LoginForm from './LoginForm';
 import { signInForm } from '../../core/form.constants';
-import { signIn } from '../../redux/modules/signIn.module';
+import { signIn } from '../../redux/modules/signIn/signIn.module';
 
 
 export const mapDispatchToProps = {
   signIn
 };
 
-const form = {
+export const form = {
   form: signInForm
 };
 

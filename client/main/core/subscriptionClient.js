@@ -1,8 +1,9 @@
 import { SubscriptionClient } from 'subscriptions-transport-ws';
-import url from 'url';
+
+import { getParsedLocationUrl } from '../../common/core/location';
 
 
-const parsedUrl = url.parse(window.location.href);
+const parsedUrl = getParsedLocationUrl();
 const protocol = process.env.NODE_ENV === 'production' ? 'wss' : 'ws';
 
 const subscriptionClient = new SubscriptionClient(

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div
+  className="logo"
+>
+  wen
+</div>
+`;
+
+exports[`should render large logo 1`] = `
+<div
+  className="logo logo--large"
+>
+  wen
+</div>
+`;

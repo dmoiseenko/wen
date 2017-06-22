@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render production html 1`] = `
+<html
+  lang="en"
+>
+  <head>
+    <meta
+      charSet="utf-8"
+    />
+    <meta
+      content="IE=edge"
+      httpEquiv="X-UA-Compatible"
+    />
+    <meta
+      content="width=device-width, initial-scale=1"
+      name="viewport"
+    />
+    <title>
+      Wen
+    </title>
+    <link
+      href="css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "root",
+        }
+      }
+      id="react-app"
+    />
+    <script
+      src="manifest"
+      type="text/javascript"
+    />
+    <script
+      src="vendor"
+      type="text/javascript"
+    />
+    <script
+      src={undefined}
+      type="text/javascript"
+    />
+  </body>
+</html>
+`;

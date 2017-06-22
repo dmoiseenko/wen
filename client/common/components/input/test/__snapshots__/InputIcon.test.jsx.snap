@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render with error 1`] = `
+<span
+  className="icon"
+>
+  <i
+    className="fa fa-warning"
+  />
+</span>
+`;
+
+exports[`should render without error 1`] = `
+<span
+  className="icon"
+>
+  <i
+    className="iconClassName"
+  />
+</span>
+`;

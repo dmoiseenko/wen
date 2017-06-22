@@ -7,7 +7,7 @@ import { emailField, passwordField } from '../../core/form.constants';
 
 
 export default function LoginForm({ signIn }) {
-  function handleSubmit(event) {
+  function handleClick(event) {
     event.preventDefault();
     signIn();
   }
@@ -33,7 +33,7 @@ export default function LoginForm({ signIn }) {
       <p className="control login">
         <button
           type="submit"
-          onClick={handleSubmit}
+          onClick={handleClick}
           className="login-button"
         >
           Login

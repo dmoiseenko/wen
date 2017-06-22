@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should map dispatch to actions correctly 1`] = `
+Object {
+  "signIn": [Function],
+}
+`;
+
+exports[`should setup from correctly 1`] = `
+Object {
+  "form": "signInForm",
+}
+`;
