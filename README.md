@@ -11,7 +11,7 @@
 ### Quick start ###
 
 ```
-#bash
+# bash
 
 bash dev.sh
 ```
@@ -21,8 +21,8 @@ Open http://localhost:3000
 Use [Demo credentials](https://moiden.com/dmoiseenko/wen/wikis/demo-credentials)
 
 ```
-#bash
-#to return back to host machine and clean up environment
+# bash
+# to return back to host machine and clean up environment
 
 exit
 ```
