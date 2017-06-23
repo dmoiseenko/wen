@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not render notes when loading is true 1`] = `
+<div
+  className="content"
+>
+  <ul />
+</div>
+`;
+
+exports[`should render notes when loading is false 1`] = `
+<div
+  className="content"
+>
+  <ul>
+    <Note
+      note={
+        Object {
+          "id": 1,
+        }
+      }
+    />
+  </ul>
+</div>
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div
+  className="nav-left"
+>
+  <div
+    className="nav-item"
+  >
+    <Logo
+      large={false}
+    />
+  </div>
+</div>
+`;

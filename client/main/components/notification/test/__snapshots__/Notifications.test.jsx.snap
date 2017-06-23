@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div
+  className="notifications"
+>
+  <Connect(Notification)
+    notification={
+      Object {
+        "id": "2",
+      }
+    }
+  />
+</div>
+`;

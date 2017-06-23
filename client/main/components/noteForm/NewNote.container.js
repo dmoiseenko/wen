@@ -1,24 +1,22 @@
 import { graphql } from 'react-apollo';
 import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { compose, mapProps } from 'recompose';
 
 import NewNote from './NewNote';
 import addNoteMutation from '../../../../common/graphql/addNote.graphql';
-import { noteTextSelector } from '../../redux/selector/noteForm.selector';
-import genAddNote from '../../redux/modules/newNote.module';
+import { addNote as addNoteActionCreator } from '../../redux/modules/newNote.module';
 
 
-export function mapStateToProps(state) {
-  return {
-    noteText: noteTextSelector(state),
-  };
-}
+export const mapDispatchToProps = {
+  addNoteActionCreator
+};
 
-export const mapProps = props => ({
-  addNote: genAddNote(props)
+export const propsMapper = ({ mutate, addNoteActionCreator: addNoteAction }) => ({
+  addNote: () => addNoteAction(mutate)
 });
 
 export default compose(
-  connect(mapStateToProps),
-  graphql(addNoteMutation, { props: mapProps })
+  connect(null, mapDispatchToProps),
+  graphql(addNoteMutation),
+  mapProps(propsMapper)
 )(NewNote);

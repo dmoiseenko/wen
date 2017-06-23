@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<p
+  className="control"
+>
+  <button
+    className="button is-medium is-primary"
+    onClick={[Function]}
+    type="submit"
+  >
+    Add Note
+  </button>
+</p>
+`;

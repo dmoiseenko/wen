@@ -6,7 +6,7 @@ import NoteForm from './NoteForm';
 import { noteForm } from '../../core/note.form.constant';
 
 
-const form = {
+export const form = {
   form: noteForm,
   initialValues: {
     textField: ''

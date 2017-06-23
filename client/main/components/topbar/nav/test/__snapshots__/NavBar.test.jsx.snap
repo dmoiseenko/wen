@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render closed if isOpen false 1`] = `
+<div
+  className="nav-right nav-menu"
+>
+  <withRouter(Connect(NavigationLink))
+    label="Home"
+    route="/"
+  />
+  <withRouter(Connect(NavigationLink))
+    label="Notes"
+    route="/notes"
+  />
+  <withRouter(Connect(NavigationLink))
+    label="Graph"
+    route="/graph"
+  />
+  <withRouter(Connect(NavigationLink))
+    label="About"
+    route="/about"
+  />
+  <div
+    className="nav-item"
+  >
+    <Connect(Logout) />
+  </div>
+</div>
+`;
+
+exports[`should render opened if isOpen true 1`] = `
+<div
+  className="nav-right nav-menu is-active"
+>
+  <withRouter(Connect(NavigationLink))
+    label="Home"
+    route="/"
+  />
+  <withRouter(Connect(NavigationLink))
+    label="Notes"
+    route="/notes"
+  />
+  <withRouter(Connect(NavigationLink))
+    label="Graph"
+    route="/graph"
+  />
+  <withRouter(Connect(NavigationLink))
+    label="About"
+    route="/about"
+  />
+  <div
+    className="nav-item"
+  >
+    <Connect(Logout) />
+  </div>
+</div>
+`;

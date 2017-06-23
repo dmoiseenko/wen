@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div
+  className="index"
+>
+  <nav
+    className="nav nav__topbar"
+  >
+    <TopBar />
+  </nav>
+  <section
+    className="section section__content"
+  >
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      path="/about"
+    />
+    <Route
+      component={[Function]}
+      path="/notes"
+    />
+    <Route
+      component={[Function]}
+      path="/graph"
+    />
+  </section>
+  <Connect(Notifications) />
+</div>
+`;

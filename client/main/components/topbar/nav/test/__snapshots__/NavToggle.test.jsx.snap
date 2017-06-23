@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render closed if isOpen false 1`] = `
+<span
+  className="nav-toggle"
+  onClick={[Function]}
+>
+  <span />
+  <span />
+  <span />
+</span>
+`;
+
+exports[`should render opened if isOpen true 1`] = `
+<span
+  className="nav-toggle is-active"
+  onClick={[Function]}
+>
+  <span />
+  <span />
+  <span />
+</span>
+`;

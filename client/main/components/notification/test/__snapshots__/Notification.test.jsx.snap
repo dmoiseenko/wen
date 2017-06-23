@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render error notification 1`] = `
+<div
+  className="notification is-warning"
+  onClick={[Function]}
+>
+  notification description
+</div>
+`;
+
+exports[`should render event notification 1`] = `
+<div
+  className="notification is-primary"
+  onClick={[Function]}
+>
+  notification description
+</div>
+`;

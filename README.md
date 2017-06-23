@@ -26,3 +26,13 @@ Use [Demo credentials](https://moiden.com/dmoiseenko/wen/wikis/demo-credentials)
 
 exit
 ```
+
+### Features ###
+
+* Server Side Rendering, Store Rehydration
+* Code split per component
+* GraphQL, GraphQL Subscriptions
+* Unit, Integration and Functional Testing Automation
+* Continuous Delivery
+* Async/await
+* JWT, HTTP/2, WSS

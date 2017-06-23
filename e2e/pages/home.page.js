@@ -7,19 +7,19 @@ class Home extends Page {
   }
 
   isOpen() {
-    return browser.isVisible('.nav');
+    return this.header.isVisible();
   }
 
-  get navigation() {
-    return browser.element('.nav');
+  get header() {
+    return browser.element('h2*=Welcome to');
   }
 
   waitForLoad() {
-    return this.navigation.waitForExist(2000);
+    return this.header.waitForExist(2000);
   }
 
   wasNotLoad() {
-    return this.navigation.waitForExist(2000, true);
+    return this.header.waitForExist(2000, true);
   }
 }
 
