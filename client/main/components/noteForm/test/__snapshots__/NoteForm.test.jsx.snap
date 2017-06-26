@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<form
+  className="container"
+>
+  <Field
+    component={[Function]}
+    iconClassName="fa fa-pencil"
+    name="textField"
+    placeholder="note text"
+    type="text"
+  />
+  <div
+    className="field"
+  >
+    <Connect(Apollo(mapProps(NewNote))) />
+  </div>
+</form>
+`;

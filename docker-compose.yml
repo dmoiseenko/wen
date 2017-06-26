@@ -10,33 +10,24 @@ services:
     image: redis:3.2.5-alpine
     volumes:
       - redis-data:/data
-    links:
-      - logspout
 
   api:
     links:
       - redis
       - postgres
-      - logspout
 
   socket:
     links:
       - redis
       - postgres
-      - logspout
 
   static:
     links:
       - postgres
-      - logspout
 
   runner:
-    depends_on:
-      - nginx
     links:
       - postgres
-      - api
-    command: /bin/true
 
   nginx:
     build:

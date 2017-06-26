@@ -6,7 +6,7 @@ const HomePage = require('./pages/home.page');
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 
 describe('Login', () => {
-  beforeEach(() => {
+  afterEach(() => {
     logOut();
   });
 

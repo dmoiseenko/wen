@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<NavLink
+  activeClassName="is-active"
+  className="nav-item is-tab"
+  exact={true}
+  onClick={[Function]}
+  to="route"
+>
+  label
+</NavLink>
+`;

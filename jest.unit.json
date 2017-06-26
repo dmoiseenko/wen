@@ -6,5 +6,9 @@
   "setupFiles": [
     "./server/test/init.js"
   ],
-  "testEnvironment": "node"
+  "testEnvironment": "node",
+  "transform": {
+    "\\.(gql|graphql)$": "jest-transform-graphql",
+    ".*": "babel-jest"
+  }
 }

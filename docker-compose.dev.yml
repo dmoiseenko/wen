@@ -59,7 +59,6 @@ services:
     env_file: .env.dev
     links:
       - selenium
-    command: /bin/true
 
   postgres:
     env_file: .env.dev

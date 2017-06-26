@@ -1,7 +1,5 @@
-/* eslint-disable */
-
-module.exports = function (wallaby) {
-  process.env.NODE_ENV = 'test';
+module.exports = (wallaby) => {
+  // process.env.NODE_ENV = 'test';
 
   return {
     files: [
@@ -32,8 +30,8 @@ module.exports = function (wallaby) {
       runner: 'node'
     },
     testFramework: 'jest',
-    setup: function () {
-      const jestConfig = require('./jest.unit.json');
+    setup() {
+      const jestConfig = require('./jest.unit.json'); // eslint-disable-line
       wallaby.testFramework.configure(jestConfig);
     },
     slowTestThreshold: 200,

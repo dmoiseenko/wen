@@ -11,7 +11,7 @@ test:
 deploy_staging:
   stage: deploy
   script:
-    - bash prod.sh up
+    - bash prod.sh down && bash prod.sh up
   only:
     - master
   tags:

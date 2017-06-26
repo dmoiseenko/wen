@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reduce closeMenu correctly 1`] = `
+Object {
+  "menu": Object {
+    "isOpen": false,
+  },
+}
+`;
+
+exports[`reduce openCloseMenu correctly 1`] = `
+Object {
+  "menu": Object {
+    "isOpen": true,
+  },
+}
+`;
+
+exports[`reduce openMenu correctly 1`] = `
+Object {
+  "menu": Object {
+    "isOpen": true,
+  },
+}
+`;

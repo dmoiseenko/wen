@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should map state to props correctly 1`] = `
+Object {
+  "description": "notification description",
+  "id": 1,
+  "isError": false,
+  "isEvent": true,
+  "type": "event",
+}
+`;

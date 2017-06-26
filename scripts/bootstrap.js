@@ -2,7 +2,6 @@
 
 const bootstrap = require('../server/db/bootstrap/bootstrap');
 
-
 bootstrap()
   .then(() => {
     console.log('Bootstrap finished');

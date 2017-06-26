@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div
+  className="card graph"
+>
+  <Sizer>
+    <Cloth
+      height={0}
+      width={0}
+    />
+  </Sizer>
+</div>
+`;

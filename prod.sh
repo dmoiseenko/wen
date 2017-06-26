@@ -8,13 +8,12 @@ DOCKER_COMPOSE="docker-compose
 
 case $1 in
 "up")
-	${DOCKER_COMPOSE} down -v
 	docker system prune -f
   ${DOCKER_COMPOSE} build
   ${DOCKER_COMPOSE} up -d
 	;;
 "down")
-	${DOCKER_COMPOSE} down -v
+	${DOCKER_COMPOSE} down -v --rmi local
 	;;
 *)
   echo "First argument must be one of 'up' or 'down'"
