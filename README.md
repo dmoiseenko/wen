@@ -29,29 +29,31 @@ exit
 
 ### Features ###
 
-* #####One 
-* #####Server Side Rendering, Store Rehydration
-* #####GraphQL, GraphQL Subscriptions
-* #####Full Unit, Integration and Functional(End To End) Testing Automation
-* #####Continuous Delivery
-* #####Code splitting and lazy(or on-demand) bundle loading
-* #####ES6, Async/await, FP
-* #####JWT Authentication, HTTP/2, WSS
-* #####Front-end
+* **One environment setup for development, CI and production**
+* **Server Side Rendering**
+* **GraphQL, GraphQL Subscriptions**
+* **Full Unit, Integration and Functional(End To End) Testing Automation**
+* **Continuous Delivery**
+* **Code splitting and lazy(or on-demand) bundle loading**
+* **ES6, Async/await, FP**
+* **JWT Authentication, HTTP/2, WSS**
+* **Front-end**
   * React
   * Redux
   * Redux-Saga
+  * Apollo
   * Webpack
-* #####Back-end
+* **Back-end**
   * Koa
   * Sequelize, Postgres
+  * Apollo
   * NGINX
-* #####Testing
+* **Testing**
   * Jest
   * ChimpJS
   * Selenium
   * Webdriver.io
-* #####Infrastructure
+* **Infrastructure**
   * Docker, Docker-Compose
   * Gitlab
   
