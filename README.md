@@ -29,10 +29,29 @@ exit
 
 ### Features ###
 
-* Server Side Rendering, Store Rehydration
-* Code split per component
-* GraphQL, GraphQL Subscriptions
-* Unit, Integration and Functional Testing Automation
-* Continuous Delivery
-* Async/await
-* JWT, HTTP/2, WSS
+* #####One 
+* #####Server Side Rendering, Store Rehydration
+* #####GraphQL, GraphQL Subscriptions
+* #####Full Unit, Integration and Functional(End To End) Testing Automation
+* #####Continuous Delivery
+* #####Code splitting and lazy(or on-demand) bundle loading
+* #####ES6, Async/await, FP
+* #####JWT Authentication, HTTP/2, WSS
+* #####Front-end
+  * React
+  * Redux
+  * Redux-Saga
+  * Webpack
+* #####Back-end
+  * Koa
+  * Sequelize, Postgres
+  * NGINX
+* #####Testing
+  * Jest
+  * ChimpJS
+  * Selenium
+  * Webdriver.io
+* #####Infrastructure
+  * Docker, Docker-Compose
+  * Gitlab
+  
