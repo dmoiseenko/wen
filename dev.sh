@@ -2,9 +2,9 @@
 
 DOCKER_COMPOSE="docker-compose
 --project-name wenDev
+-f docker-compose.logs.yml
 -f docker-compose.yml
--f docker-compose.dev.yml
--f docker-compose.logs.yml"
+-f docker-compose.dev.yml"
 
 case $1 in
 "up")
@@ -17,6 +17,6 @@ case $1 in
 	;;
 *)
   ${DOCKER_COMPOSE} build
-  ${DOCKER_COMPOSE} run --service-ports runner bash -c "yarn run bootstrap && bash"
+  ${DOCKER_COMPOSE} run --service-ports runner bash -c "yarn run bootstrap && yarn run wait:dev && bash"
   ${DOCKER_COMPOSE} down
 esac

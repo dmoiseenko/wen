@@ -29,24 +29,24 @@ exit
 
 ### Features ###
 
-* **One environment setup for development, CI and production**
-* **Server Side Rendering**
-* **GraphQL, GraphQL Subscriptions**
+* **Uniform cross-platform environment setup for development, CI and production**
 * **Full Unit, Integration and Functional(End To End) Testing Automation**
 * **Continuous Delivery**
+* **Universal JavaScript, Server Side Rendering**
+* **GraphQL, GraphQL Subscriptions**
 * **Code splitting and lazy(or on-demand) bundle loading**
 * **ES6, Async/await, FP**
-* **JWT Authentication, HTTP/2, WSS**
+* **JWT Authentication, HTTP/2, HTTPS, WSS**
 * **Front-end**
   * React
   * Redux
   * Redux-Saga
-  * Apollo
+  * Apollo Client
   * Webpack
 * **Back-end**
   * Koa
   * Sequelize, Postgres
-  * Apollo
+  * Apollo Server
   * NGINX
 * **Testing**
   * Jest

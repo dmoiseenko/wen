@@ -3,7 +3,8 @@
 DOCKER_COMPOSE="docker-compose
 --project-name wenTest
 -f docker-compose.yml
--f docker-compose.test.yml"
+-f docker-compose.test.yml
+-f docker-compose.logs.yml"
 
 ${DOCKER_COMPOSE} build
 ${DOCKER_COMPOSE} run --service-ports runner yarn run test

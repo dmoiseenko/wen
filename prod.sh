@@ -8,9 +8,8 @@ DOCKER_COMPOSE="docker-compose
 
 case $1 in
 "up")
-	docker system prune -f
   ${DOCKER_COMPOSE} build
-  ${DOCKER_COMPOSE} up -d
+  ${DOCKER_COMPOSE} run --service-ports runner bash -c "yarn run wait:prod && yarn run bootstrap"
 	;;
 "down")
 	${DOCKER_COMPOSE} down -v --rmi local
