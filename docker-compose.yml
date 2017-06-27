@@ -15,6 +15,7 @@ services:
     links:
       - redis
       - postgres
+      - logspout
 
   socket:
     links:
@@ -28,6 +29,7 @@ services:
   runner:
     links:
       - postgres
+      - nginx
 
   nginx:
     build:

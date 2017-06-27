@@ -96,6 +96,7 @@
     "koa-webpack": "0.5.1",
     "node-sass": "4.5.3",
     "nodemon": "1.11.0",
+    "ora": "1.3.0",
     "react-addons-test-utils": "15.5.1",
     "react-hot-loader": "3.0.0-beta.6",
     "react-test-renderer": "15.5.4",
@@ -110,7 +111,7 @@
     "webpack-bundle-analyzer": "2.8.2",
     "webpack-node-externals": "1.6.0"
   },
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "api": "node server/api.server.js",
     "bootstrap": "node scripts/bootstrap.js",
@@ -130,15 +131,15 @@
     "test:unit:watch": "jest --watch --config jest.unit.json",
     "test:integration": "jest --runInBand --forceExit --config jest.integration.json",
     "test:integration:watch": "jest --runInBand --watch --config jest.integration.json",
-    "chimp": "chimp",
-    "chimp:watch": "chimp --watch",
-    "test:e2e": "node ./scripts/runChimp.js",
-    "test:e2e:watch": "node ./scripts/runChimp.js --watch",
+    "test:e2e": "yarn run wait:prod && chimp",
+    "test:e2e:watch": "yarn run wait:prod && chimp --watch",
     "watch:api": "nodemon -L --watch server --watch common -e js,json,graphqls --ignore '**/test/*' --ignore '**/spec/*' server/api.server.js",
     "watch:socket": "nodemon -L --watch server --watch common --ignore '**/test/*' --ignore '**/spec/*' -e js,json,graphqls server/socket.server.js",
     "watch:static": "npm run prebuild && concurrently \"npm run watch:static:login\" \"npm run watch:static:main\" \"npm run watch:static:server\"",
     "watch:static:login": "webpack -w --watch-poll --config ./client/login/webpack/login.prebuild.webpack.config.js",
     "watch:static:main": "webpack -w --watch-poll --config ./client/main/webpack/main.prebuild.webpack.config.js",
-    "watch:static:server": "nodemon -L --ignore '**/test/*' --ignore '**/spec/*' --watch common --watch static static/static.server.js"
+    "watch:static:server": "nodemon -L --ignore '**/test/*' --ignore '**/spec/*' --watch common --watch static static/static.server.js",
+    "wait:dev": "node ./scripts/waitDev.js",
+    "wait:prod": "node ./scripts/waitProd.js"
   }
 }

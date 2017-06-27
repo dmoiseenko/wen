@@ -1,8 +1,7 @@
-/* eslint-disable no-console */
-
 const waitOn = require('wait-on');
 const spawn = require('child_process').spawn;
 const config = require('../common/config.js');
+const ora = require('ora');
 
 
 const args = process.argv.slice(2);
@@ -14,14 +13,16 @@ const opts = {
   ],
 };
 
+const spinner = ora('Please wait for environment setup').start();
+
 waitOn(opts, (err) => {
   if (err) {
-    console.log(err);
+    spinner.fail(err);
     process.exit(1);
     return;
   }
 
-  console.log('Server is ready');
+  spinner.succeed('Environment is ready');
 
   const command = isWatch ? 'chimp:watch' : 'chimp';
 
