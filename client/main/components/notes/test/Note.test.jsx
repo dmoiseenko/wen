@@ -7,6 +7,7 @@ import Note from '../Note';
 it('should render', () => {
   const props = {
     note: {
+      id: 1,
       text: 'note text'
     }
   };

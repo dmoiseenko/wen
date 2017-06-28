@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
     },
     [noteMapper.text]: {
       type: DataTypes.STRING
+    },
+    [noteMapper.deleted]: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   },
   {

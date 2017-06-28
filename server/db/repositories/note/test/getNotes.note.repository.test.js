@@ -15,6 +15,9 @@ it('should find all notes', async () => {
 
   expect(models[noteMapper.Note].findAll).toHaveBeenCalledWith({
     raw: true,
+    where: {
+      [noteMapper.deleted]: false
+    },
     attributes: [noteMapper.text, commonMapper.id]
   });
   expect(actual).toEqual('all notes');

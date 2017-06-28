@@ -2,9 +2,11 @@ const { NoteValidationError } = require('../../errors');
 
 
 module.exports = (_, params) => {
-  if (!params.text) {
+  if (!params.id) {
     throw new NoteValidationError({
-      message: 'Note text should not be empty',
+      data: {
+        text: 'Note id should not be empty'
+      }
     });
   }
 };
