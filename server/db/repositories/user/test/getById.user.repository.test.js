@@ -10,7 +10,7 @@ jest.doMock('../../../models/models', () => ({
 
 const userMapper = require('../../../mappers/user.mapper');
 const commonMapper = require('../../../mappers/common.mapper');
-const getUserById = require('../getUserById.user.repository');
+const getUserById = require('../getById.user.repository');
 const models = require('../../../models/models');
 const errors = require('../../../../utils/errors');
 

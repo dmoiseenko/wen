@@ -29,12 +29,15 @@ exit
 
 ### Features ###
 
-* **Uniform cross-platform environment setup for development, CI and production**
-* **Full Unit, Integration and Functional(End To End) Testing Automation**
+* **Uniform environment setup for development, CI and production**
+* **Unit, Integration and Functional(End To End) Testing**
 * **Continuous Delivery**
+  * Automated Testing
+  * Automated Deployment
 * **Universal JavaScript, Server Side Rendering**
-* **GraphQL, GraphQL Subscriptions**
+* **GraphQL, GraphQL Subscriptions, REST**
 * **Code splitting and lazy(or on-demand) bundle loading**
+* **React/Redux best practices(smart/dumb components, modules, sagas)**
 * **ES6, Async/await, FP**
 * **JWT Authentication, HTTP/2, HTTPS, WSS**
 * **Front-end**

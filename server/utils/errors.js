@@ -15,3 +15,6 @@ module.exports.UserNotFoundError =
 
 module.exports.InvalidTokenError =
   class InvalidTokenError extends ExtendableError {};
+
+module.exports.NoteNotFoundError =
+  class NoteNotFoundError extends ExtendableError {};

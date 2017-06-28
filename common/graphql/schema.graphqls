@@ -12,6 +12,7 @@ type Note {
 type Query {
   me: User
   notes: [Note]
+  note(id: Int!): Note
 }
 
 type Subscription {

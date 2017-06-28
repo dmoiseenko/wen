@@ -1,0 +1,6 @@
+query getNoteById($id: Int!) {
+  note(id: $id) {
+    id
+    text
+  }
+}

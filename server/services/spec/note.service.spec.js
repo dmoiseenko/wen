@@ -35,3 +35,13 @@ describe('createNote', () => {
     });
   });
 });
+
+describe('getNoteById', () => {
+  beforeEach(() => bootstrap());
+
+  it('should get note by id', async () => {
+    const actual = await noteService.getNoteById(1);
+
+    expect(actual).toMatchSnapshot();
+  });
+});

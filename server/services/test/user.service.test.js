@@ -1,10 +1,10 @@
 jest.mock(
-  '../../db/repositories/user/getUserById.user.repository.js',
+  '../../db/repositories/user/getById.user.repository.js',
   () => jest.fn().mockReturnValue(Promise.resolve('user'))
 );
 
 const userService = require('../user.service');
-const getUserById = require('../../db/repositories/user/getUserById.user.repository.js');
+const getUserById = require('../../db/repositories/user/getById.user.repository.js');
 
 
 describe('getById', () => {
