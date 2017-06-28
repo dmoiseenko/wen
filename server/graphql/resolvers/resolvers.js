@@ -2,12 +2,14 @@ const me = require('./me/me.resolver');
 const notes = require('./notes/notes.resolver');
 const addNote = require('./addNote/addNote.resolver');
 const noteAdded = require('./noteAdded/noteAdded.resolver');
+const note = require('./note/note.resolver');
 
 
 module.exports = {
   Query: {
     me,
-    notes
+    notes,
+    note
   },
   Subscription: {
     noteAdded

@@ -1,6 +1,6 @@
 const hashService = require('./hash.service');
 const jwtService = require('./jwt.service');
-const getUserByEmail = require('../db/repositories/user/getUserByEmail.user.repository');
+const getUserByEmail = require('../db/repositories/user/getByEmail.user.repository');
 
 
 module.exports.login = async ({ email, password }) => {

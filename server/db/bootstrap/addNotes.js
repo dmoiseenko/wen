@@ -2,13 +2,13 @@ const { Note } = require('../models/models');
 
 const notes = [
   {
-    text: 'asd1'
+    text: 'Well done is better than well said. Benjamin Franklin'
   },
   {
-    text: 'asd2'
+    text: 'Look deep into nature, and then you will understand everything better. Albert Einstein'
   },
   {
-    text: 'asd3'
+    text: 'Be yourself; everyone else is already taken. Oscar Wilde'
   }
 ];
 

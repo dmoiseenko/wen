@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { compose, lifecycle, mapProps } from 'recompose';
 
 import Notes from './Notes';
-import getAllNotesQuery from '../../../../common/graphql/getAllNotes.graphql';
-import noteAddedSubscription from '../../../../common/graphql/noteAdded.graphql';
+import getAllNotesQuery from '../../../../common/graphql/query/getAllNotes.graphql';
+import noteAddedSubscription from '../../../../common/graphql/subscription/noteAdded.graphql';
 import updatesGetAllNotesQueryResult from '../../redux/modules/notes.module';
 
 
@@ -22,14 +22,20 @@ export function componentDidMount() {
   });
 }
 
-export function componentWillUnMount() {
+export function componentWillUnmount() {
   this.unsubscribe();
 }
 
-export default compose(connect(),
-  graphql(getAllNotesQuery),
+export default compose(
+  connect(),
+  graphql(getAllNotesQuery, {
+    options: {
+      fetchPolicy: 'cache-and-network'
+    }
+  }),
   lifecycle({
     componentDidMount,
-    componentWillUnMount,
+    componentWillUnmount,
   }),
-  mapProps(propsMapper))(Notes);
+  mapProps(propsMapper)
+)(Notes);

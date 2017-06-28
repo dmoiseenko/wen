@@ -1,5 +1,5 @@
 const bootstrap = require('../../../bootstrap/bootstrap.js');
-const getUserById = require('../getUserById.user.repository.js');
+const getUserById = require('../getById.user.repository.js');
 const userMapper = require('../../../mappers/user.mapper.js');
 
 

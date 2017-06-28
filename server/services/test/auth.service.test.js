@@ -1,10 +1,10 @@
 jest.mock('../hash.service');
 jest.mock('../jwt.service');
-jest.mock('../../db/repositories/user/getUserByEmail.user.repository');
+jest.mock('../../db/repositories/user/getByEmail.user.repository');
 
 const hashService = require('../hash.service');
 const jwtService = require('../jwt.service');
-const getUserByEmail = require('../../db/repositories/user/getUserByEmail.user.repository');
+const getUserByEmail = require('../../db/repositories/user/getByEmail.user.repository');
 const authService = require('../auth.service');
 
 

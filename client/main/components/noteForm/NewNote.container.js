@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { compose, mapProps } from 'recompose';
 
 import NewNote from './NewNote';
-import addNoteMutation from '../../../../common/graphql/addNote.graphql';
+import addNoteMutation from '../../../../common/graphql/mutation/addNote.graphql';
 import { addNote as addNoteActionCreator } from '../../redux/modules/newNote.module';
 
 

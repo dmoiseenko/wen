@@ -4,15 +4,15 @@ exports[`should get all notes 1`] = `
 Array [
   Object {
     "id": 1,
-    "text": "asd1",
+    "text": "Well done is better than well said. Benjamin Franklin",
   },
   Object {
     "id": 2,
-    "text": "asd2",
+    "text": "Look deep into nature, and then you will understand everything better. Albert Einstein",
   },
   Object {
     "id": 3,
-    "text": "asd3",
+    "text": "Be yourself; everyone else is already taken. Oscar Wilde",
   },
 ]
 `;
