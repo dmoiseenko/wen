@@ -9,7 +9,7 @@ export default function DeleteNoteButton({ deleteNote }) {
 
   return (
     <a
-      className="fa fa-times"
+      className="fa fa-times note__delete"
       onClick={handleClick}
     />
   );
