@@ -6,9 +6,10 @@ exports[`should render 1`] = `
 >
   <h5>
     note text
+     
+    <Connect(Apollo(mapProps(DeleteNoteButton)))
+      noteId={1}
+    />
   </h5>
-  <Connect(Apollo(mapProps(DeleteNoteButton)))
-    noteId={1}
-  />
 </li>
 `;

@@ -9,7 +9,7 @@ export default function DeleteNoteButton({ deleteNote }) {
 
   return (
     <a
-      className="delete is-small"
+      className="fa fa-times"
       onClick={handleClick}
     />
   );
