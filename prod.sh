@@ -12,7 +12,7 @@ case $1 in
   ${DOCKER_COMPOSE} run --service-ports runner bash -c "yarn run wait:prod && yarn run bootstrap"
 	;;
 "down")
-	${DOCKER_COMPOSE} down -v --rmi local
+	${DOCKER_COMPOSE} down -v
 	;;
 *)
   echo "First argument must be one of 'up' or 'down'"
