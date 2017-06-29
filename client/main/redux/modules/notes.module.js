@@ -2,7 +2,7 @@ import { sendNotification } from './notifications.module';
 import { NOTIFICATION_EVENT } from '../../core/notification.constants';
 
 
-export default dispatch => (prev, { subscriptionData }) => {
+export const updateNoteWhenNoteAdded = dispatch => (prev, { subscriptionData }) => {
   if (!subscriptionData.data) {
     return prev;
   }
@@ -16,6 +16,26 @@ export default dispatch => (prev, { subscriptionData }) => {
     notes: [
       ...prev.notes,
       newNote
+    ]
+  };
+};
+
+export const updateNoteWhenNoteDeleted = dispatch => (prev, { subscriptionData }) => {
+  if (!subscriptionData.data) {
+    return prev;
+  }
+
+  const deletedNote = subscriptionData.data.noteDeleted;
+
+  const deletedIndex = prev.notes.findIndex(({ id }) => id === deletedNote.id);
+
+  dispatch(sendNotification('Note has been deleted', NOTIFICATION_EVENT));
+
+  return {
+    ...prev,
+    notes: [
+      ...prev.notes.slice(0, deletedIndex),
+      ...prev.notes.slice(deletedIndex + 1),
     ]
   };
 };

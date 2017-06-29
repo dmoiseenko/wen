@@ -10,6 +10,9 @@ const subscriptionManager = new SubscriptionManager({
   setupFunctions: {
     noteAdded: () => ({
       noteAdded: {}
+    }),
+    noteDeleted: () => ({
+      noteDeleted: {}
     })
   }
 });

@@ -1,0 +1,6 @@
+subscription {
+  noteDeleted {
+    id
+    text
+  }
+}

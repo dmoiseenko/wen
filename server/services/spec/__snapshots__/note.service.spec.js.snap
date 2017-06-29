@@ -14,6 +14,26 @@ Object {
 }
 `;
 
+exports[`deleteNoteById should delete note by id 1`] = `
+Array [
+  Object {
+    "id": 2,
+    "text": "Look deep into nature, and then you will understand everything better. Albert Einstein",
+  },
+  Object {
+    "id": 3,
+    "text": "Be yourself; everyone else is already taken. Oscar Wilde",
+  },
+]
+`;
+
+exports[`deleteNoteById should return deleted note 1`] = `
+Object {
+  "id": 1,
+  "text": "Well done is better than well said. Benjamin Franklin",
+}
+`;
+
 exports[`getNoteById should get note by id 1`] = `
 Object {
   "id": 1,

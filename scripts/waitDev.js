@@ -5,8 +5,7 @@ const ora = require('ora');
 const opts = {
   resources: [
     'http-get://static:3000'
-  ],
-  timeout: 60000
+  ]
 };
 
 const spinner = ora('Please wait for environment setup').start();

@@ -10,7 +10,8 @@ module.exports = async (id) => {
   const noteInstance = await Note
     .findOne({
       where: {
-        [commonMapper.id]: id
+        [commonMapper.id]: id,
+        [noteMapper.deleted]: false
       },
       attributes: [
         commonMapper.id,

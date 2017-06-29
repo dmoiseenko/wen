@@ -22,7 +22,8 @@ it('should query note by id', async () => {
 
   expect(models[noteMapper.Note].findOne).toHaveBeenCalledWith({
     where: {
-      [commonMapper.id]: 'note id'
+      [commonMapper.id]: 'note id',
+      [noteMapper.deleted]: false
     },
     attributes: [
       commonMapper.id,

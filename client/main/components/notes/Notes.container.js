@@ -5,7 +5,8 @@ import { compose, lifecycle, mapProps } from 'recompose';
 import Notes from './Notes';
 import getAllNotesQuery from '../../../../common/graphql/query/getAllNotes.graphql';
 import noteAddedSubscription from '../../../../common/graphql/subscription/noteAdded.graphql';
-import updatesGetAllNotesQueryResult from '../../redux/modules/notes.module';
+import noteDeletedSubscription from '../../../../common/graphql/subscription/noteDeleted.graphql';
+import { updateNoteWhenNoteAdded, updateNoteWhenNoteDeleted } from '../../redux/modules/notes.module';
 
 
 export const propsMapper = ({ data }) => ({
@@ -16,14 +17,20 @@ export const propsMapper = ({ data }) => ({
 export function componentDidMount() {
   const { data: { subscribeToMore }, dispatch } = this.props;
 
-  this.unsubscribe = subscribeToMore({
+  this.noteAddedUnsubscribe = subscribeToMore({
     document: noteAddedSubscription,
-    updateQuery: updatesGetAllNotesQueryResult(dispatch)
+    updateQuery: updateNoteWhenNoteAdded(dispatch)
+  });
+
+  this.noteDeletedUnsubscribe = subscribeToMore({
+    document: noteDeletedSubscription,
+    updateQuery: updateNoteWhenNoteDeleted(dispatch)
   });
 }
 
 export function componentWillUnmount() {
-  this.unsubscribe();
+  this.noteAddedUnsubscribe();
+  this.noteDeletedUnsubscribe();
 }
 
 export default compose(

@@ -1,9 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render 1`] = `
-<li>
+<li
+  className="block"
+>
   <h5>
     note text
   </h5>
+  <Connect(Apollo(mapProps(DeleteNoteButton)))
+    noteId={1}
+  />
 </li>
 `;

@@ -45,3 +45,20 @@ describe('getNoteById', () => {
     expect(actual).toMatchSnapshot();
   });
 });
+
+describe('deleteNoteById', () => {
+  beforeEach(() => bootstrap());
+
+  it('should delete note by id', async () => {
+    await noteService.deleteNoteById(1);
+    const actual = await noteService.getNotes();
+
+    expect(actual).toMatchSnapshot();
+  });
+
+  it('should return deleted note', async () => {
+    const actual = await noteService.deleteNoteById(1);
+
+    expect(actual).toMatchSnapshot();
+  });
+});
