@@ -1,24 +1,22 @@
-jest.doMock('../../../models/models', () => ({
-  Note: {
-    findAll: jest.fn(() => 'all notes'),
-  }
-}));
-
 const noteMapper = require('../../../mappers/note.mapper');
 const commonMapper = require('../../../mappers/common.mapper');
-const getNotes = require('../getNotes.note.repository');
-const models = require('../../../models/models');
+const { findAll } = require('../getNotes.note.repository');
 
 
-it('should find all notes', async () => {
-  const actual = await getNotes();
+describe('findAll', () => {
+  it('should pass proper query', async () => {
+    const noteModel = {
+      findAll: jest.fn()
+    };
 
-  expect(models[noteMapper.Note].findAll).toHaveBeenCalledWith({
-    raw: true,
-    where: {
-      [noteMapper.deleted]: false
-    },
-    attributes: [noteMapper.text, commonMapper.id]
+    await findAll(noteModel)();
+
+    expect(noteModel.findAll).toHaveBeenCalledWith({
+      raw: true,
+      where: {
+        [noteMapper.deleted]: false
+      },
+      attributes: [noteMapper.text, commonMapper.id]
+    });
   });
-  expect(actual).toEqual('all notes');
 });

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`formPayload should form JWT token payload 1`] = `
+Object {
+  "id": 1,
+}
+`;
+
+exports[`getUserAndPassword should get user by email 1`] = `
+Object {
+  "password": "password",
+  "user": Object {
+    "id": 1,
+    "passwordHash": "123",
+  },
+}
+`;
+
+exports[`verifyPassword should verify password hash 1`] = `
+Object {
+  "isVerified": true,
+  "user": Object {
+    "id": 1,
+    "passwordHash": "123",
+  },
+}
+`;

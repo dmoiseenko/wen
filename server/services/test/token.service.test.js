@@ -5,7 +5,7 @@ const jsonStringifySpy = jest.spyOn(JSON, 'stringify')
 const jsonParseSpy = jest.spyOn(JSON, 'parse')
   .mockReturnValue('data');
 
-const jwtService = require('../jwt.service');
+const jwtService = require('../token.service');
 const cryptoService = require('../crypto.service');
 const jwt = require('jsonwebtoken');
 const config = require('../../../common/config');
@@ -40,7 +40,7 @@ describe('generateToken', () => {
   });
 });
 
-describe('generateToken', () => {
+describe('verifyTokenAndReturnUserData', () => {
   cryptoService.decrypt.mockReturnValue('data JSON');
   jwt.verify.mockReturnValue('encryptedData');
 

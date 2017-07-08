@@ -1,6 +1,6 @@
 const noteService = require('../note.service');
 const bootstrap = require('../../db/bootstrap/bootstrap.js');
-const pubSub = require('../../graphql/pubsub.js');
+const { pubSub } = require('../../graphql/pubsub.js');
 
 
 describe('getNotes', () => {

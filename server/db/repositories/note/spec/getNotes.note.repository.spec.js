@@ -1,4 +1,4 @@
-const getNotes = require('../getNotes.note.repository');
+const { getNotes } = require('../getNotes.note.repository');
 const bootstrap = require('../../../bootstrap/bootstrap.js');
 
 

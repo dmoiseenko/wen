@@ -1,5 +1,5 @@
 const cookie = require('../../utils/cookie');
-const jwtService = require('../../services/jwt.service');
+const jwtService = require('../../services/token.service');
 
 
 module.exports = () => async (ctx, next) => {

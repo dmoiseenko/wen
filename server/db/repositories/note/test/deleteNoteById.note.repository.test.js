@@ -1,44 +1,38 @@
-const noteInstance = {
-  get: jest.fn(() => 'note')
-};
-const update = jest.fn(() => Promise.resolve([1, [noteInstance]]));
-jest.doMock('../../../models/models', () => ({
-  Note: {
-    update
-  }
-}));
-
 const noteMapper = require('../../../mappers/note.mapper');
 const commonMapper = require('../../../mappers/common.mapper');
-const deleteNoteById = require('../deleteNoteById.note.repository');
-const models = require('../../../models/models');
+const { deleteNoteInstance, checkAffectedRows } = require('../deleteNoteById.note.repository');
 const errors = require('../../../../utils/errors');
 
 
-const id = 'note id';
+describe('deleteNoteInstance', () => {
+  it('should delete note by id', () => {
+    const noteModel = {
+      update: jest.fn()
+    };
 
-it('should delete note by id', async () => {
-  await deleteNoteById(id);
+    deleteNoteInstance(noteModel)(12);
 
-  expect(models[noteMapper.Note].update).toHaveBeenCalledWith(
-    { [noteMapper.deleted]: true },
-    {
-      where: {
-        [commonMapper.id]: id
-      },
-      attributes: [
-        commonMapper.id,
-        noteMapper.text
-      ],
-      returning: true
-    }
-  );
+    expect(noteModel.update).toHaveBeenCalledWith(
+      { [noteMapper.deleted]: true },
+      {
+        where: {
+          [commonMapper.id]: 12
+        },
+        returning: true
+      }
+    );
+  });
 });
 
-it('should throw NoteNotFoundError if note was not found', async () => {
-  models[noteMapper.Note].update = jest.fn(() => [0, []]);
+describe('checkAffectedRows', () => {
+  it('should throw NoteNotFoundError if affectedCount is zero', () => {
+    expect(() => checkAffectedRows([0, []])).toThrow(errors.NoteNotFoundError);
+  });
 
-  await expect(deleteNoteById(id)).rejects.toBeInstanceOf(errors.NoteNotFoundError);
+  it('should first affected instance', () => {
+    const actual = checkAffectedRows([1, ['instance']]);
 
-  models[noteMapper.Note].destroy = update;
+    expect(actual).toEqual('instance');
+  });
 });
+

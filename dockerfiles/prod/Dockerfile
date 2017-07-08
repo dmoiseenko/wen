@@ -5,10 +5,12 @@ WORKDIR /usr/src/app
 COPY yarn.lock .
 COPY package.json .
 
-RUN apk add --no-cache make gcc g++ python bash && \
+RUN apk --no-cache add --virtual builds-deps build-base python make gcc g++ && \
+    apk --no-cache add bash && \
     yarn && \
+    npm rebuild bcrypt --build-from-source && \
     yarn cache clean && \
-    apk del make gcc g++ python
+    apk del builds-deps
 
 COPY client client
 COPY common common
