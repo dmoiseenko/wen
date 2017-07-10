@@ -1,24 +1,14 @@
 const jwt = require('jsonwebtoken');
 
-const cryptoService = require('./crypto.service.js');
-const config = require('../../common/config');
-const errors = require('../utils/errors');
+const { InvalidTokenError } = require('../utils/errors');
 
 
-module.exports.generateToken = (data = {}) => {
-  const dataString = JSON.stringify(data);
-  const encryptedData = cryptoService.encrypt(dataString);
+module.exports.sign = secret => encryptedData => jwt.sign(encryptedData, secret);
 
-  return jwt.sign(encryptedData, config.secret.jwt);
-};
-
-module.exports.verifyTokenAndReturnUserData = (token) => {
+module.exports.verify = secret => (token) => {
   try {
-    const encryptedData = jwt.verify(token, config.secret.jwt);
-    const dataJSON = cryptoService.decrypt(encryptedData);
-
-    return JSON.parse(dataJSON);
+    return jwt.verify(token, secret);
   } catch (err) {
-    throw new errors.InvalidTokenError();
+    throw new InvalidTokenError();
   }
 };

@@ -1,4 +1,4 @@
-const jwtService = require('../jwt.service.js');
+const jwtService = require('../token.service.js');
 
 
 it('should generate token and verify it', async () => {

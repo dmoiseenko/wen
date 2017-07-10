@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should get note by id 1`] = `
+Object {
+  "id": 1,
+  "text": "Well done is better than well said. Benjamin Franklin",
+}
+`;

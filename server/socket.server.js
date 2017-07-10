@@ -4,7 +4,7 @@ const { SubscriptionServer } = require('subscriptions-transport-ws');
 const subscriptionManager = require('./graphql/subscriptionManager');
 const config = require('../common/config.js');
 const cookie = require('cookie');
-const jwtService = require('./services/jwt.service');
+const jwtService = require('./services/token.service');
 const logger = require('./utils/logger.js');
 
 

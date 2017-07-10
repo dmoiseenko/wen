@@ -1,12 +1,30 @@
+const R = require('ramda');
+
 const hashService = require('./hash.service');
-const jwtService = require('./jwt.service');
-const getUserByEmail = require('../db/repositories/user/getByEmail.user.repository');
+const jwtService = require('./token.service');
+const getUserByEmailRepository = require('../db/repositories/user/getByEmail.user.repository');
 
 
-module.exports.login = async ({ email, password }) => {
-  const user = await getUserByEmail(email);
+const getUserAndPassword = getUserByEmail => async ({ email, password }) => ({
+  user: await getUserByEmail(email),
+  password
+});
 
-  await hashService.verifyHash(password, user.passwordHash);
+const verifyPassword = verifyPasswordHash => async ({ user, password }) => ({
+  isVerified: await verifyPasswordHash(password, user.passwordHash),
+  user
+});
 
-  return jwtService.generateToken({ id: user.id });
-};
+const formPayload = ({ user }) => ({ id: user.id });
+
+
+module.exports.login = ({ email, password }) => R.pipeP(
+  getUserAndPassword(getUserByEmailRepository),
+  verifyPassword(hashService.verifyHash),
+  formPayload,
+  jwtService.generateToken
+)({ email, password });
+
+module.exports.formPayload = formPayload;
+module.exports.getUserAndPassword = getUserAndPassword;
+module.exports.verifyPassword = verifyPassword;

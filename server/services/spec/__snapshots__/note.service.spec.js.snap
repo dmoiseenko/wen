@@ -37,10 +37,6 @@ Object {
 exports[`getNoteById should get note by id 1`] = `
 Object {
   "id": 1,
-  "plain": Object {
-    "id": 1,
-    "text": "Well done is better than well said. Benjamin Franklin",
-  },
   "text": "Well done is better than well said. Benjamin Franklin",
 }
 `;

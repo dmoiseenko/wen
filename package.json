@@ -36,6 +36,7 @@
     "preact": "8.1.0",
     "preact-compat": "3.16.0",
     "prop-types": "15.5.10",
+    "ramda": "0.24.1",
     "react": "15.6.1",
     "react-apollo": "1.2.0",
     "react-dom": "15.6.1",

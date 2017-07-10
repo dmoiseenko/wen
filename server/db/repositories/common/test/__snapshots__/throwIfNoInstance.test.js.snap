@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should throw if instance is null 1`] = `"instance is null"`;

@@ -1,11 +1,18 @@
+const R = require('ramda');
+
 const { Note } = require('../../models/models');
 const noteMapper = require('../../mappers/note.mapper');
+const getPlainNote = require('../common/getPlainInstance');
 
 
-module.exports = async (noteText) => {
-  const newNote = await Note.create({
+const createNoteInstance = noteModel => noteText =>
+  noteModel.create({
     [noteMapper.text]: noteText
   });
 
-  return newNote.get('plain');
-};
+module.exports.createNoteInstance = createNoteInstance;
+
+module.exports.createNote = noteText => R.pipeP(
+  createNoteInstance(Note),
+  getPlainNote
+)(noteText);

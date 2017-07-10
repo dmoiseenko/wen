@@ -1,8 +1,8 @@
 jest.mock('../../../utils/cookie.js');
-jest.mock('../../../services/jwt.service.js');
+jest.mock('../../../services/token.service.js');
 
 const cookie = require('../../../utils/cookie.js');
-const jwtService = require('../../../services/jwt.service.js');
+const jwtService = require('../../../services/token.service.js');
 const processMiddleware = require('../auth.process.middleware');
 
 
