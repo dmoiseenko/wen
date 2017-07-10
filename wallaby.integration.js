@@ -1,8 +1,6 @@
 /* eslint-disable */
 
 module.exports = function (wallaby) {
-  process.env.NODE_ENV = 'development';
-
   return {
     files: [
       'client/**/*.js*',

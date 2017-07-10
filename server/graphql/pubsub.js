@@ -2,7 +2,7 @@ const { RedisPubSub } = require('graphql-redis-subscriptions');
 
 const config = require('../../common/config');
 
-const pubSub = new RedisPubSub({
+const pubsub = new RedisPubSub({
   connection: {
     host: config.redis.host,
     port: config.redis.port,
@@ -11,9 +11,9 @@ const pubSub = new RedisPubSub({
 });
 
 module.exports.publish = subscription => (message) => {
-  pubSub.publish(subscription, message);
+  pubsub.publish(subscription, message);
 
   return message;
 };
 
-module.exports.pubSub = pubSub;
+module.exports.pubsub = pubsub;

@@ -10,5 +10,8 @@
   "transform": {
     "\\.(gql|graphql)$": "jest-transform-graphql",
     ".*": "babel-jest"
+  },
+  "globals": {
+    "PREBUILD": false
   }
 }
