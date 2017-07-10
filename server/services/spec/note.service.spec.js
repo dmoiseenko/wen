@@ -1,6 +1,6 @@
 const noteService = require('../note.service');
 const bootstrap = require('../../db/bootstrap/bootstrap.js');
-const { pubSub } = require('../../graphql/pubsub.js');
+const { pubsub } = require('../../graphql/pubsub.js');
 
 
 describe('getNotes', () => {
@@ -25,9 +25,9 @@ describe('createNote', () => {
   it('should publish noteAdded message with created note', (done) => {
     let subscriptionId;
 
-    return pubSub.subscribe('noteAdded', (newNote) => {
+    return pubsub.subscribe('noteAdded', (newNote) => {
       expect(newNote).toMatchSnapshot();
-      pubSub.unsubscribe(subscriptionId);
+      pubsub.unsubscribe(subscriptionId);
       done();
     }).then(async (subId) => {
       subscriptionId = subId;

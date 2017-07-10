@@ -37,7 +37,7 @@ export default compose(
   connect(),
   graphql(getAllNotesQuery, {
     options: {
-      fetchPolicy: 'cache-and-network'
+      fetchPolicy: PREBUILD ? 'cache-first' : 'cache-and-network'
     }
   }),
   lifecycle({

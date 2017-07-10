@@ -1,6 +1,4 @@
 module.exports = wallaby =>
-  // process.env.NODE_ENV = 'test';
-
    ({
      files: [
        'client/**/*.js*',
