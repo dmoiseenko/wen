@@ -74,7 +74,7 @@ module.exports = ({ entry, output, context }) => ({
       },
       {
         test: /\.(svg|eot|ttf|woff|woff2)$/,
-        loader: 'url-loader',
+        loader: 'file-loader',
         options: {
           limit: 10000,
           name: 'fonts/[name].[ext]'
