@@ -5,7 +5,7 @@ exports[`should render 1`] = `
   className="card graph"
 >
   <Sizer>
-    <Cloth
+    <Lattice
       height={0}
       width={0}
     />

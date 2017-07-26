@@ -7,7 +7,7 @@ import getLinks from './getLinks';
 import * as handlers from './handlers';
 
 
-export default class Cloth extends Component {
+export default class Lattice extends Component {
   componentDidMount() {
     this.renderCanvas(this.props);
   }
@@ -57,14 +57,14 @@ export default class Cloth extends Component {
   }
 }
 
-Cloth.propTypes = {
+Lattice.propTypes = {
   /* eslint-disable react/no-unused-prop-types*/
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired
   /* eslint-enable react/no-unused-prop-types*/
 };
 
-Cloth.defaultProps = {
+Lattice.defaultProps = {
   width: 0,
   height: 0
 };
