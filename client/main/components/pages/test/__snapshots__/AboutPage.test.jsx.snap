@@ -11,29 +11,40 @@ exports[`should render 1`] = `
       About
     </h2>
     <br />
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "
+          <h5>
+            Created by <a href=\\"mailto:dmoiseenko@mykolab.com\\">Denis Moiseenko</a>
+          </h5>
+        ",
+        }
+      }
+    />
+    <Remarkable
+      container="div"
+      options={Object {}}
+    >
+      
+        ##### All source code is available on [here](https://moiden.com/dmoiseenko/wen)
+      
+    </Remarkable>
+    
+      
     <h5>
-      Created by 
-      <a
-        href="mailto:dmoiseenko@mykolab.com"
-      >
-        Denis Moiseenko
-      </a>
-    </h5>
-    <h5>
-      All source code is available on 
-      <a
-        href="https://moiden.com/dmoiseenko/wen"
-      >
-        here
-      </a>
-    </h5>
-    <h5>
+      
+           
       <a
         href="https://moiden.com/dmoiseenko/wen/blob/master/LICENSE"
       >
         MIT License
       </a>
+      
+        
     </h5>
+    
+    
   </div>
 </div>
 `;
