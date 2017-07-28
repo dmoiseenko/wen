@@ -5,11 +5,9 @@ const errors = require('../utils/errors');
 
 const saltRounds = 10;
 
-module.exports.saltRounds = saltRounds;
+const generateHash = value => bcrypt.hash(value, saltRounds);
 
-module.exports.generateHash = value => bcrypt.hash(value, saltRounds);
-
-module.exports.verifyHash = async (value, hash) => {
+const verifyHash = async (value, hash) => {
   const isVerified = await bcrypt.compare(value, hash);
 
   if (!isVerified) {
@@ -17,4 +15,10 @@ module.exports.verifyHash = async (value, hash) => {
   }
 
   return isVerified;
+};
+
+module.exports = {
+  saltRounds,
+  generateHash,
+  verifyHash
 };

@@ -14,8 +14,11 @@ const findAll = noteModel => () =>
     attributes: [noteMapper.text, commonMapper.id]
   });
 
-module.exports.findAll = findAll;
-
-module.exports.getNotes = () => R.pipeP(
+const getNotes = () => R.pipeP(
   findAll(Note)
 )();
+
+module.exports = {
+  findAll,
+  getNotes
+};

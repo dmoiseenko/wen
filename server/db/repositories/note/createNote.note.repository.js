@@ -10,9 +10,12 @@ const createNoteInstance = noteModel => noteText =>
     [noteMapper.text]: noteText
   });
 
-module.exports.createNoteInstance = createNoteInstance;
-
-module.exports.createNote = noteText => R.pipeP(
+const createNote = noteText => R.pipeP(
   createNoteInstance(Note),
   getPlainNote
 )(noteText);
+
+module.exports = {
+  createNote,
+  createNoteInstance
+};

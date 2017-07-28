@@ -17,14 +17,17 @@ const verifyPassword = verifyPasswordHash => async ({ user, password }) => ({
 
 const formPayload = ({ user }) => ({ id: user.id });
 
-
-module.exports.login = ({ email, password }) => R.pipeP(
+const login = ({ email, password }) => R.pipeP(
   getUserAndPassword(getUserByEmailRepository),
   verifyPassword(hashService.verifyHash),
   formPayload,
   jwtService.generateToken
 )({ email, password });
 
-module.exports.formPayload = formPayload;
-module.exports.getUserAndPassword = getUserAndPassword;
-module.exports.verifyPassword = verifyPassword;
+
+module.exports = {
+  formPayload,
+  getUserAndPassword,
+  verifyPassword,
+  login
+};

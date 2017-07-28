@@ -16,11 +16,13 @@ const findNoteInstance = noteModel => id =>
     }
   });
 
-module.exports.findNoteInstance = findNoteInstance;
-
-module.exports.getNoteById = id => R.pipeP(
+const getNoteById = id => R.pipeP(
   findNoteInstance(Note),
   throwIfNoInstance(new NoteNotFoundError()),
   getPlainNote
 )(id);
 
+module.exports = {
+  findNoteInstance,
+  getNoteById
+};

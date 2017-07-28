@@ -3,7 +3,7 @@ const validateEmail = require('../../common/validation/email.validation');
 const validatePassword = require('../../common/validation/password.validation');
 
 
-module.exports.validateLoginInput = (body) => {
+const validateLoginInput = (body) => {
   if (!body) {
     throw new errors.LoginValidationError();
   }
@@ -14,4 +14,8 @@ module.exports.validateLoginInput = (body) => {
   } catch (err) {
     throw new errors.LoginValidationError();
   }
+};
+
+module.exports = {
+  validateLoginInput
 };

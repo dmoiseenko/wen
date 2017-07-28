@@ -10,10 +10,13 @@ const pubsub = new RedisPubSub({
   }
 });
 
-module.exports.publish = subscription => (message) => {
+const publish = subscription => (message) => {
   pubsub.publish(subscription, message);
 
   return message;
 };
 
-module.exports.pubsub = pubsub;
+module.exports = {
+  pubsub,
+  publish
+};
