@@ -20,8 +20,6 @@ const deleteNoteInstance = noteModel => id =>
     }
   );
 
-module.exports.deleteNoteInstance = deleteNoteInstance;
-
 const checkAffectedRows = ([affectedCount, affectedRows]) => {
   if (affectedCount === 0) {
     throw new NoteNotFoundError();
@@ -30,11 +28,14 @@ const checkAffectedRows = ([affectedCount, affectedRows]) => {
   return affectedRows[0];
 };
 
-module.exports.checkAffectedRows = checkAffectedRows;
-
-module.exports.deleteNoteById = id => R.pipeP(
+const deleteNoteById = id => R.pipeP(
   deleteNoteInstance(Note),
   checkAffectedRows,
   getPlainNote
 )(id);
 
+module.exports = {
+  deleteNoteInstance,
+  checkAffectedRows,
+  deleteNoteById
+};
