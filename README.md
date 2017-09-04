@@ -6,7 +6,7 @@
 * Docker Compose v1.13 or later
 * Bash Shell v4 or later
 
-### [Documentation](https://moiden.com/dmoiseenko/wen/wikis/home) ###
+### [Documentation](https://github.com/dmoiseenko/wen/wiki) ###
 
 ### Quick start ###
 
@@ -18,7 +18,7 @@ bash dev.sh
 
 Open http://localhost:3000
 
-Use [Demo credentials](https://moiden.com/dmoiseenko/wen/wikis/demo-credentials)
+Use [Demo credentials](https://github.com/dmoiseenko/wen/wiki/demo-credentials)
 
 ```
 # bash
