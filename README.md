@@ -1,5 +1,3 @@
-[![build status](https://moiden.com/dmoiseenko/wen/badges/master/build.svg)](https://moiden.com/dmoiseenko/wen/commits/master)
-
 ### Requirements ###
 
 * Docker v17 or later
